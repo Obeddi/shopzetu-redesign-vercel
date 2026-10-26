@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Header and mega menu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<header onMouseLeave="{{ closeMenu }}" style="position: relative; z-index: 40; background: #FFFFFF; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0E0B0C">
+
+<!-- ===== DESKTOP ===== -->
+<sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
+
+<sc-if value="{{ bn }}" hint-placeholder-val="{{ true }}">
+<div style="background: #0E0B0C; color: #FFFFFF">
+<div style="max-width: 1320px; margin: 0 auto; padding: 6px 24px; min-height: 46px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<div style="display: flex; align-items: center; gap: 14px">
+<span style="font-family: 'Archivo', 'Arial Black', sans-serif; font-stretch: 125%; font-weight: 900; font-size: 15px; letter-spacing: 0.02em; color: #DDEA0D">BLACK NOVEMBER</span>
+<span style="width: 1px; height: 16px; background: #3A3033"></span>
+<span style="font-size: 13px; color: #EDE6E2">Flash deals 40% off &amp; above</span>
+</div>
+<dc-import name="Countdown" target="campaign" tone="dark" label="Ends in" hint-size="260px,32px"></dc-import>
+<a href="collection.html" title="/collections/black-november-sale" style="color: #FFFFFF; font-weight: 700; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center">Shop the sale</a>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ everyday }}" hint-placeholder-val="{{ false }}">
+<div style="background: #0E0B0C; color: #FFFFFF">
+<div style="max-width: 1320px; margin: 0 auto; padding: 6px 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; text-align: center">
+<a href="#" title="/pages/return-policy" style="color: #FFFFFF; text-decoration: none; display: flex; flex-direction: column; gap: 2px; padding: 4px 0"><strong style="font-size: 13px; font-weight: 800">RETURN, REFUND &amp; EXCHANGE POLICY</strong><span style="font-size: 12px; color: #E2DAD5">Shopzetu Return Process</span></a>
+<a href="collection.html" title="/collections/zetu-gift-cards" style="color: #FFFFFF; text-decoration: none; display: flex; flex-direction: column; gap: 2px; padding: 4px 0"><strong style="font-size: 13px; font-weight: 800">GIVE THE GIFT OF CHOICE</strong><span style="font-size: 12px; color: #E2DAD5">Delight with our exclusive gift vouchers</span></a>
+</div>
+</div>
+</sc-if>
+
+<div style="max-width: 1320px; margin: 0 auto; padding: 10px 24px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 16px">
+<nav aria-label="Help" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap">
+<a href="#" title="/pages/return-policy" style="color: #4A4245; text-decoration: none; font-size: 13px; font-weight: 600">Return, refund &amp; exchange policy</a>
+<a href="collection.html" title="/collections/zetu-gift-cards" style="color: #4A4245; text-decoration: none; font-size: 13px; font-weight: 600">Gift vouchers</a>
+</nav>
+<a href="./" aria-label="Shopzetu home" style="display: block; width: 58px; height: 58px; border-radius: 6px; overflow: hidden"><img src="assets/9a57b6464821d21922160c7e6bd320d5.png" alt="Shopzetu" style="width: 100%; height: 100%; display: block"></a>
+<div style="display: flex; justify-content: flex-end; align-items: center; gap: 8px">
+<a href="account.html" title="account.shopzetu.com" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 12px; border-radius: 999px; border: 1px solid #E7E2DC; color: #0E0B0C; text-decoration: none; font-size: 13px; font-weight: 600; box-sizing: border-box"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>Login</a>
+<button aria-label="Wishlist" style="width: 44px; height: 44px; border-radius: 999px; border: 1px solid #E7E2DC; background: #FFFFFF; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"></path></svg></button>
+<button aria-label="{{ cartAria }}" onClick="{{ cartClick }}" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 16px 0 14px; border-radius: 999px; border: 0; background: #0E0B0C; color: #FFFFFF; font-family: inherit; font-weight: 700; font-size: 13px; cursor: pointer">
+<span style="position: relative; display: flex"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round"><path d="M6 7h12l-1 13H7L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span style="position: absolute; top: -7px; right: -9px; min-width: 18px; height: 18px; padding: 0 4px; box-sizing: border-box; border-radius: 999px; background: #DDEA0D; color: #0E0B0C; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{ count }}</span></span>
+<span>{{ total }}</span>
+</button>
+</div>
+</div>
+
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 24px 12px; display: flex; gap: 10px; align-items: center">
+<button onClick="{{ searchClick }}" aria-label="Search the store" style="flex: 1 1 auto; display: flex; align-items: center; gap: 12px; min-height: 50px; padding: 0 5px 0 18px; border-radius: 999px; border: 1px solid #E7E2DC; background: #F7F5F2; color: #6B625C; font-family: inherit; font-size: 14px; cursor: text; text-align: left">
+<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 19px; height: 19px; fill: none; stroke: #0E0B0C; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<span style="flex: 1 1 auto">Search products, brands and more…</span>
+<span style="background: #0E0B0C; color: #FFFFFF; border-radius: 999px; padding: 0 20px; min-height: 40px; display: flex; align-items: center; font-weight: 700; font-size: 13px">Search</span>
+</button>
+<a href="collection.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 50px; padding: 0 18px; border-radius: 999px; border: 1px solid #E7E2DC; color: #0E0B0C; text-decoration: none; font-weight: 600; font-size: 13px; box-sizing: border-box"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round"><path d="M4 6h9"></path><path d="M17 6h3"></path><circle cx="15" cy="6" r="2"></circle><path d="M4 12h3"></path><path d="M11 12h9"></path><circle cx="9" cy="12" r="2"></circle><path d="M4 18h11"></path><path d="M19 18h1"></path><circle cx="17" cy="18" r="2"></circle></svg>Filters</a>
+</div>
+
+<nav aria-label="Main" style="border-top: 1px solid #EFEAE4; border-bottom: 1px solid #EFEAE4; background: #FFFFFF">
+<div style="max-width: 1320px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: nowrap; justify-content: safe center; gap: 3px; overflow-x: auto; scrollbar-width: none">
+<sc-for list="{{ menu }}" as="it" hint-placeholder-count="14">
+<a href="collection.html" title="{{ it.u }}" onMouseEnter="{{ it.hover }}" onFocus="{{ it.hover }}" style="flex: none; display: inline-flex; align-items: center; min-height: 36px; padding: 0 9px; border-radius: 999px; border: 1px solid {{ it.bd }}; background: {{ it.bg }}; color: {{ it.fg }}; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; text-decoration: none; white-space: nowrap; box-sizing: border-box; transition: background 0.15s, color 0.15s">{{ it.t }}</a>
+</sc-for>
+</div>
+</nav>
+
+<sc-if value="{{ hasPanel }}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; left: 0; right: 0; top: 100%; z-index: 50; background: #FFFFFF; border-bottom: 1px solid #EFEAE4; box-shadow: 0 24px 48px rgba(14,11,12,0.14)">
+<div style="max-width: 1320px; margin: 0 auto; padding: 28px 24px 32px; display: flex; gap: 32px; align-items: flex-start">
+<div style="flex: 1 1 auto; min-width: 0; display: grid; grid-template-columns: repeat({{ panel.cols }}, minmax(0, 1fr)); gap: 28px">
+<sc-for list="{{ panel.groups }}" as="g" hint-placeholder-count="4">
+<div style="grid-column: span {{ g.span }}; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-if value="{{ g.hasT }}" hint-placeholder-val="{{ true }}">
+<a href="collection.html" title="{{ g.u }}" style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0E0B0C; text-decoration: none; padding-bottom: 6px; border-bottom: 1px solid #EFEAE4">{{ g.t }}</a>
+</sc-if>
+<div style="columns: {{ g.span }}; column-gap: 28px">
+<sc-for list="{{ g.l }}" as="l" hint-placeholder-count="6">
+<a href="collection.html" title="{{ l.u }}" style="display: block; break-inside: avoid; padding: 6px 0; font-size: 14px; color: #3D3538; text-decoration: none">{{ l.t }}</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+<a href="collection.html" title="{{ panel.promoU }}" style="flex: 0 0 280px; display: flex; flex-direction: column; gap: 14px; border-radius: 18px; background: #0E0B0C; color: #FFFFFF; text-decoration: none; padding: 12px 12px 18px; box-sizing: border-box">
+<sc-if value="{{ panel.hasImg }}" hint-placeholder-val="{{ true }}">
+<img src="{{ panel.img }}" alt="" style="width: 100%; height: 190px; object-fit: cover; object-position: center 15%; border-radius: 12px; display: block; background: #2A2326">
+</sc-if>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 0 6px">
+<span style="align-self: flex-start; background: {{ promoTagBg }}; color: {{ promoTagFg }}; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; padding: 5px 10px; border-radius: 999px">{{ promoTag }}</span>
+<span style="font-size: 19px; font-weight: 800; line-height: 1.2">{{ panel.promoT }}</span>
+<span style="font-size: 13px; font-weight: 700; color: #DDEA0D">Shop now</span>
+</div>
+</a>
+</div>
+</div>
+</sc-if>
+
+</sc-if>
+
+<!-- ===== MOBILE ===== -->
+<sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+
+<sc-if value="{{ bn }}" hint-placeholder-val="{{ true }}">
+<div style="background: #0E0B0C; color: #FFFFFF; padding: 8px 16px 10px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap">
+<span style="font-family: 'Archivo', 'Arial Black', sans-serif; font-stretch: 125%; font-weight: 900; font-size: 13px; color: #DDEA0D">BLACK NOVEMBER</span>
+<span style="font-size: 12px; color: #EDE6E2">Flash deals 40% off &amp; above</span>
+</div>
+<dc-import name="Countdown" target="campaign" tone="dark" label="Ends in" hint-size="250px,30px"></dc-import>
+</div>
+</sc-if>
+<sc-if value="{{ everyday }}" hint-placeholder-val="{{ false }}">
+<a href="collection.html" title="/collections/zetu-gift-cards" style="display: block; background: #0E0B0C; color: #FFFFFF; padding: 8px 16px; text-align: center; text-decoration: none; font-size: 12px"><strong style="font-weight: 800">GIVE THE GIFT OF CHOICE</strong> · Delight with our exclusive gift vouchers</a>
+</sc-if>
+
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; padding: 6px 8px">
+<div style="display: flex; align-items: center">
+<button aria-label="Open menu" onClick="{{ openNav }}" style="width: 44px; height: 44px; border: 0; background: transparent; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h10"></path></svg></button>
+<a href="account.html" aria-label="Account" style="width: 44px; height: 44px; color: #0E0B0C; display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></a>
+</div>
+<a href="./" aria-label="Shopzetu home" style="display: block; width: 46px; height: 46px; border-radius: 5px; overflow: hidden"><img src="assets/9a57b6464821d21922160c7e6bd320d5.png" alt="Shopzetu" style="width: 100%; height: 100%; display: block"></a>
+<div style="display: flex; justify-content: flex-end; align-items: center">
+<button aria-label="Wishlist" style="width: 44px; height: 44px; border: 0; background: transparent; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"></path></svg></button>
+<button aria-label="{{ cartAria }}" onClick="{{ cartClick }}" style="position: relative; width: 44px; height: 44px; border: 0; background: transparent; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round"><path d="M6 7h12l-1 13H7L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span style="position: absolute; top: 4px; right: 2px; min-width: 18px; height: 18px; padding: 0 4px; box-sizing: border-box; border-radius: 999px; background: #DDEA0D; color: #0E0B0C; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{ count }}</span></button>
+</div>
+</div>
+
+<div style="padding: 0 12px 10px">
+<button onClick="{{ searchClick }}" aria-label="Search the store" style="width: 100%; display: flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 16px; border-radius: 999px; border: 1px solid #E7E2DC; background: #F7F5F2; color: #6B625C; font-family: inherit; font-size: 14px; text-align: left; cursor: text"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: none; stroke: #0E0B0C; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>Search products, brands and more…</button>
+</div>
+
+<nav aria-label="Main" style="border-top: 1px solid #EFEAE4; border-bottom: 1px solid #EFEAE4">
+<div style="display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 8px 12px">
+<sc-for list="{{ menu }}" as="it" hint-placeholder-count="6">
+<a href="collection.html" title="{{ it.u }}" style="flex: none; display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid {{ it.bd }}; background: {{ it.bg }}; color: {{ it.fg }}; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; white-space: nowrap; box-sizing: border-box">{{ it.t }}</a>
+</sc-for>
+</div>
+</nav>
+
+<sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 300; display: flex; background: rgba(14,11,12,0.5)">
+<div style="width: 88%; max-width: 380px; height: 100%; background: #FFFFFF; overflow-y: auto; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 8px 10px 16px; border-bottom: 1px solid #EFEAE4">
+<img src="assets/9a57b6464821d21922160c7e6bd320d5.png" alt="Shopzetu" style="width: 40px; height: 40px; border-radius: 4px; display: block">
+<button aria-label="Close menu" onClick="{{ closeNav }}" style="width: 44px; height: 44px; border: 0; background: transparent; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+</div>
+<sc-if value="{{ bn }}" hint-placeholder-val="{{ true }}">
+<a href="collection.html" title="/collections/black-friday-flash-sale" style="margin: 12px 16px 4px; display: flex; flex-direction: column; gap: 4px; background: #DDEA0D; color: #0E0B0C; text-decoration: none; border-radius: 14px; padding: 14px 16px">
+<span style="font-family: 'Archivo', 'Arial Black', sans-serif; font-stretch: 125%; font-weight: 900; font-size: 15px">BLACK NOVEMBER</span>
+<span style="font-size: 13px; font-weight: 700">Flash deals 40% off &amp; above · Shop now</span>
+</a>
+</sc-if>
+<div style="padding: 4px 0">
+<sc-for list="{{ menu }}" as="it" hint-placeholder-count="14">
+<div style="border-bottom: 1px solid #F1ECE7">
+<button onClick="{{ it.toggle }}" aria-expanded="{{ it.isAcc }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 0 16px; border: 0; background: transparent; font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: 0.03em; color: {{ it.mobFg }}; cursor: pointer; text-align: left">{{ it.t }}<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transform: rotate({{ it.rot }}); transition: transform 0.2s"><path d="M6 9l6 6 6-6"></path></svg></button>
+<sc-if value="{{ it.isAcc }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 0 16px 16px; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{ it.groups }}" as="g" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<sc-if value="{{ g.hasT }}" hint-placeholder-val="{{ true }}">
+<a href="collection.html" title="{{ g.u }}" style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #6B625C; text-decoration: none; padding: 4px 0">{{ g.t }}</a>
+</sc-if>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{ g.l }}" as="l" hint-placeholder-count="4">
+<a href="collection.html" title="{{ l.u }}" style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #E7E2DC; color: #0E0B0C; text-decoration: none; font-size: 13px; box-sizing: border-box">{{ l.t }}</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+<a href="collection.html" title="{{ it.u }}" style="font-size: 13px; font-weight: 700; color: #5F6600; text-decoration: none">Shop all {{ it.label }}</a>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+<div style="margin-top: auto; padding: 16px; background: #F7F5F2; display: flex; flex-direction: column; gap: 4px">
+<a href="account.html" style="color: #0E0B0C; text-decoration: none; font-size: 14px; font-weight: 700; min-height: 40px; display: flex; align-items: center">Login</a>
+<a href="#" title="/pages/return-policy" style="color: #0E0B0C; text-decoration: none; font-size: 13px; min-height: 40px; display: flex; align-items: center">Return, refund &amp; exchange policy</a>
+<a href="collection.html" title="/collections/zetu-gift-cards" style="color: #0E0B0C; text-decoration: none; font-size: 13px; min-height: 40px; display: flex; align-items: center">Gift vouchers</a>
+<span style="font-size: 12px; color: #6B625C; padding-top: 6px">support@shopzetu.com · 0703 420 780</span>
+</div>
+</div>
+<button aria-label="Close menu" onClick="{{ closeNav }}" style="flex: 1 1 auto; border: 0; background: transparent; cursor: pointer"></button>
+</div>
+</sc-if>
+
+</sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"m":{"editor":"boolean","default":false},"bn":{"editor":"boolean","default":true,"section":"Campaign"},"cartCount":{"editor":null},"cartTotal":{"editor":null},"onCart":{"editor":null},"onSearch":{"editor":null},"active":{"editor":null},"demoNav":{"editor":null},"$preview":{"width":1440,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const m = !!this.props.m;
+    const bn = this.props.bn ?? true;
+    const standalone = typeof this.props.onCart !== 'function';
+    const open = st.open === undefined ? (standalone && !m ? 2 : -1) : st.open;
+    const navOpen = st.nav === undefined ? !!this.props.demoNav : st.nav;
+    const acc = st.acc === undefined ? (this.props.demoNav ? 2 : -1) : st.acc;
+    const active = String(this.props.active || '').trim();
+    const L = (arr) => arr.map((x) => ({ t: x[0], u: x[1] }));
+    const tc = (s) => s.toLowerCase().replace(/(^|\s)\S/g, (c) => c.toUpperCase());
+
+    const MENU = [
+      { t: 'BRANDS', u: '/pages/all-our-brands', img: '9002350a10ffd2430983e9f413bf9720', bnT: 'Brand deals, all month long', g: [
+        { t: 'Best Selling Brands', u: '/pages/featured-brands', s: 2, l: [['Vivo', '/shop/vivo'], ['Safari By Vivo', '/shop/safari-by-vivo'], ['Lizola', '/collections/lizola'], ['Stylish Sisters', '/collections/stylish-sisters'], ['TimyT Urban Wear', '/collections/timyt-urban-wear'], ['Elsie Glamour', '/collections/elsie-glamour'], ['Plain Chic', '/collections/plain-chic'], ['Kakiba Collections', '/collections/kakiba-collections'], ['Phyls Collection', '/collections/phyls-collection'], ['African Yuva', '/collections/african-yuva'], ['Home of Calor', '/collections/home-of-calor'], ['PrettyGline', '/collections/prettygline'], ['Puma', '/shop/puma'], ['The Fashion Frenzy', '/collections/the-fashion-frenzy'], ['Afriwia', '/collections/afriwia'], ['Jolly Fancy Wears', '/collections/jolly-fancy-wears'], ['Hessed', '/collections/hessed'], ['Hats And More', '/collections/hats-and-more'], ['Alpha Threads Fashions', '/collections/alpha-threads-fashions']] },
+        { t: 'New Brands', u: '/collections/newest-brands', s: 2, l: [['Agamu RTW', '/collections/agamu-rtw'], ['Alpha Threads Fashions', '/collections/alpha-threads-fashions'], ['Anzo', '/collections/anzo'], ['Blesteire Beauty', '/collections/blesteire-beauty'], ['CSF House Of Fashion', '/collections/csf-house-of-fashion'], ['Detail Africa', '/collections/detail-africa'], ['Etam', '/collections/etam'], ['Elegance Fashion', '/collections/elegance-fashion'], ['Fashion Palette', '/collections/fashion-palette'], ['Hawi Sartorial', '/collections/hawi-sartorial'], ['Inroses Glitz', '/collections/inroses-glitz'], ['Koro Gaia', '/collections/koro-gaia'], ['Leather Aura', '/collections/leather-aura'], ['Puma', '/shop/puma'], ['Qui Kihuga', '/collections/qui-kihuga'], ['Sama House', '/collections/sama-house'], ['Tamalaki Africa', '/collections/tamalaki-africa'], ['Wearplus Botique', '/collections/wearplus-boutique']] },
+        { t: 'CLICK TO SEE ALL BRANDS', u: '/pages/all-our-brands', s: 1, l: [] }
+      ] },
+      { t: 'NEW IN', u: '/collections/new-arrivals?sort_by=created-descending', img: '9924aff69fa8755556a5d9605d19308d', bnT: 'The latest pieces have entered the chat.', g: [
+        { t: 'New In', u: '/collections/new-inn', s: 1, l: [['View all', '/collections/new-arrivals'], ['Accessories', '/collections/accessories-new-in'], ['Sweater Weather', '/collections/sweater-weather-new-in']] },
+        { t: 'Trendy', u: '/collections/trending', s: 1, l: [['Hats', '/collections/hats-new-in-1'], ['Sunglasses', '/collections/sunglasses-new-in'], ['Wallets & Purses', '/collections/wallets-purses'], ['Bags', '/collections/bags-new-in'], ['Scarves & Snoods', '/collections/scarves-snoods'], ['Belts', '/collections/belts-new-in']] },
+        { t: 'Top Selection', u: '/collections/top-saved', s: 1, l: [['Beauty', '/collections/beauty'], ['Clothing', '/collections/new-arrival-clothing'], ['Footwear', '/collections/footwear'], ['Outerwear', '/collections/womens-outerwear']] },
+        { t: 'Discover', u: '/collections/new-edits', s: 1, l: [['Vivo', '/shop/vivo'], ['Lizola', '/shop/lizola'], ['African Yuva', '/shop/african-yuva']] }
+      ] },
+      { t: 'WOMEN', u: '/collections/women', img: 'cb422df1e6d0aae09513916311dbc4ed', bnT: 'Dresses, tops and more — on sale', g: [
+        { t: "WOMEN'S DRESSES", u: '/collections/womens-dresses', s: 1, l: [['Bodycons', '/collections/bodycons'], ['Corset Dresses', '/collections/corset-dresses'], ['Knee Length Dresses', '/collections/knee-length-dress'], ['Midi & Capri Dresses', '/collections/midi-capri-dresses'], ['Maxi Dresses', '/collections/maxi-dresses'], ['Shirt Dresses', '/collections/shirt-dresses'], ['Short & Mini Dresses', '/collections/party-fits-1']] },
+        { t: "WOMEN'S OUTERWEAR", u: '/collections/womens-outerwear', s: 1, l: [['Hoodies & Sweatshirts', '/collections/hoodies-sweatshirts'], ['Jackets & Coats', '/collections/jackets-coats'], ['Kimono Sets', '/collections/kimono-sets'], ['Sweaters & Ponchos', '/collections/sweaters-ponchos'], ['Waterfalls & Kimonos', '/collections/waterfalls-kimonos']] },
+        { t: "WOMEN'S TOPS", u: '/collections/womens-tops-top-categories', s: 1, l: [['Beachwear', '/collections/vacation-mode'], ['Bodysuits', '/collections/bodysuits-1'], ['Corset Tops', '/collections/corset-tops'], ['Crop Shirts', '/collections/crop-shirts'], ['Fitted Tops', '/collections/fitted-tops'], ['Midriff & Crop Tops', '/collections/crop-tops'], ['Loose Tops', '/collections/loose-tops'], ['Shirt Tops', '/collections/shirt-tops'], ['T-shirts & Tank Tops', '/collections/t-shirts-tank-tops']] },
+        { t: "WOMEN'S BOTTOMS", u: '/collections/womens-bottoms', s: 1, l: [['Culottes & Capri Pants', '/collections/cullottes-capri-pants'], ['Denim Bottoms', '/collections/womens-denim-bottoms'], ['Full Length Pants', '/collections/full-length-pants'], ['Jumpsuits & Playsuits', '/collections/jumpsuits-playsuits'], ['Leggings', '/collections/leggings'], ['Loungewear', '/collections/loungewear'], ['Midi & Capri Pants', '/collections/midi-capri-pants'], ['Pant Sets', '/collections/pant-sets'], ['Short Sets', '/collections/short-sets'], ['Shorts & Skorts', '/collections/shorts-1']] },
+        { t: "WOMEN'S SKIRTS", u: '/collections/womens-skirts', s: 1, l: [['Denim Skirts', '/collections/denin-skirts'], ['Knee Length Skirts', '/collections/knee-length-skirts-1'], ['Midi & Capri Skirts', '/collections/midi-capri-skirts'], ['Mini Skirts', '/collections/mini-skirts'], ['Maxi Skirts', '/collections/full-length-skirts-1'], ['Skirt Suits', '/collections/skirt-suits']] },
+        { t: "WOMEN'S INNERWEAR", u: '/collections/womens-innerwear', s: 1, l: [['Bra & Panty Sets', '/collections/bra-and-panty-sets'], ['Bralettes', '/collections/bralettes'], ['Bras', '/collections/bras'], ['Lingerie', '/collections/lingerie'], ['Panties', '/collections/panties'], ['Shapewear', '/collections/shapewear']] }
+      ] },
+      { t: 'MEN', u: '/collections/exclusively-men', img: 'e44d81f189653b0d0a6fb985b1a55031', bnT: "Men's picks — on sale", g: [
+        { t: '', u: '', s: 1, l: [["Men's Shirts & T-shirts", '/collections/mens-shirts-t-shirts'], ["Men's Bottoms", '/collections/mens-bottoms'], ["Men's Suits", '/collections/mens-suits'], ["Men's Outerwear", '/collections/mens-outerwear'], ["Men's Hair & Skincare", '/collections/mens-skincare'], ["Men's Accessories", '/collections/mens-accessories'], ["Men's Activewear", '/collections/mens-activewear']] }
+      ] },
+      { t: 'KIDS', u: '/collections/kids-1', img: '', bnT: "Kids' picks — on sale", g: [
+        { t: '', u: '', s: 2, l: [["Boy's Bottoms", '/collections/boys-bottoms'], ['Breast Pads', '/collections/breast-pads'], ["Girl's Tops", '/collections/girls-tops'], ["Girl's Bottoms", '/collections/girls-bottoms'], ['Kids Dresses', '/collections/kids-dresses'], ['Kids Unisex Tops', '/collections/kids-unisex-tops'], ['Kids Outerwear', '/collections/kids-outerwear'], ['Kids Footwear', '/collections/kids-footwear'], ["Kid's Accessories", '/collections/kids-accessories-1'], ['Toddler Neck Pillows', '/collections/toddler-travel-neck-pillows'], ['Toddler Pillows', '/collections/toddler-pillows']] }
+      ] },
+      { t: 'ACTIVEWEAR', u: '/collections/activewear', img: '', bnT: 'Activewear — on sale', g: [
+        { t: '', u: '', s: 1, l: [['Activewear Sets', '/collections/activewear-sets'], ['Activewear Shorts', '/collections/activewear-shorts'], ['Activewear Tops', '/collections/activewear-tops'], ['Activewear Leggings', '/collections/leggings-1'], ['Activewear Sports Bras', '/collections/sports-bra'], ['Activewear Jackets', '/collections/activewear-jackets'], ['Activewear Playsuits', '/collections/activewear-jumpsuits']] }
+      ] },
+      { t: 'FOOTWEAR', u: '/collections/footwear', img: 'eba097a93e3042aec553b175879bca8b', bnT: 'Sneakers, heels and boots — on sale', g: [
+        { t: "WOMEN'S FOOTWEAR", u: '/collections/womens-footwear', s: 1, l: [['Boots', '/collections/boots'], ['Flats', '/collections/flats'], ['Heels', '/collections/heels'], ['Sandals & Slippers', '/collections/sandals-slippers'], ['Socks & Stockings', '/collections/socks-stockings'], ["Women's Sneakers", '/collections/womens-sneakers']] },
+        { t: "MEN'S FOOTWEAR", u: '/collections/mens-footwear', s: 1, l: [["Men's Loafers", '/collections/mens-loafers'], ["Men's Boots", '/collections/mens-boots'], ["Men's Sneakers", '/collections/mens-sneakers'], ["Men's Slip On", '/collections/mens-slip-on'], ["Men's Sandals & Slippers", '/collections/mens-sandals-slippers'], ["Men's Oxford Shoes", '/collections/mens-oxford-shoes']] }
+      ] },
+      { t: 'SHOP BY BODY FIT', u: '/collections/shop-by-body-fit', img: '61a1a45d7812c8c8324b5cc406f94f26', bnT: 'Fits for every body — on sale', g: [
+        { t: '', u: '', s: 1, l: [['Curvy & Plus size', '/shop/curvy-plus-size'], ['Petite', '/collections/petite'], ['Maternity Wear', '/collections/maternity'], ['Unisex', '/collections/unisex']] }
+      ] },
+      { t: 'SALE', u: '/collections/sale', img: '1eaea51d87ee0a52f043bf53271b1456', bnT: 'Flash deals: 40% off and above', g: [
+        { t: '', u: '', s: 1, l: [['Vivo On Sale', '/collections/vivo-july-end-month-sale'], ['Dresses on Sale', '/collections/dresses-on-sale'], ['Bottoms on Sale', '/collections/bottoms-on-sale'], ['Tops On Sale', '/collections/tops-on-sale'], ['Outerwear on Sale', '/collections/outerwear-on-sale-1'], ['Accessories On Sale', '/collections/accessories-on-sale'], ['Jewelry On Sale', '/collections/jewelry-on-sale'], ["Women's Footwear On Sale", '/collections/womens-footwear-on-sale']] }
+      ] },
+      { t: 'BUDGET FRIENDLY', u: '/collections/undertwo', img: '968c6ee9ec60859d4ce1c3c150703a74', bnT: 'Deals under KES 1,600', g: [
+        { t: '', u: '', s: 1, l: [['Under 1600', '/collections/under-1601'], ['Under 2k', '/collections/under-2k'], ['Under 3k', '/collections/under-3k'], ['Under 4k', '/collections/under-4k']] }
+      ] },
+      { t: 'ACCESSORIES', u: '/collections/womens-accessories', img: '7d61a44b6c6f1911e53e7d0fb82a6129', bnT: 'Finishing touches — on sale', g: [
+        { t: '', u: '', s: 3, l: [['Anklets', '/collections/anklets'], ['Aprons', '/collections/aprons'], ['Bags', '/collections/bags'], ['Belly Chains', '/collections/belly-chains'], ['Belts', '/collections/belts-1'], ["Blankets & Kikoi's", '/collections/blankets-kikois'], ['Bonnets', '/collections/bonnets'], ['Breastfeeding Pillows', '/collections/breastfeeding-pillows'], ['Fitness Accessories', '/collections/fitness-accessories'], ['Fur Cuffs', '/collections/cuffs'], ['Gloves', '/collections/gloves'], ['Hats', '/collections/hats'], ['Headgear', '/collections/headgear'], ['Jewellery', '/collections/jewelry'], ['Neckties', '/collections/neckties'], ['Pillowcase', '/collections/pillowcase'], ['Scarves & Snoods', '/collections/scarves-snoods'], ['Sleeping Eye Masks', '/collections/sleeping-eye-masks'], ['Sunglasses', '/collections/sunglasses'], ['Sunglasses Organizers', '/collections/sunglass-organizers'], ['Table Mats', '/collections/table-mats'], ['Waist Beads', '/collections/waist-beads'], ['Wallets & Purses', '/collections/wallets-purses']] }
+      ] },
+      { t: 'BEAUTY', u: '/collections/beauty', img: '1117939f8166a01a09c2f030af4bc30b', bnT: 'Beauty deals', g: [
+        { t: 'Skincare', u: '/collections/mens-skincare', s: 1, l: [['Moisturisers & Creams', '/collections/moisturisers-and-creams'], ['Cleansers & Soaps', '/collections/cleansers-and-soaps'], ['Toners & Treatments', '/collections/treatments'], ['Masks & Scrubs', '/collections/masks'], ['Sunscreens', '/collections/sunscreens'], ['Serums', '/collections/anti-aging-serum'], ['Deos & Lotions', '/collections/deos-lotions']] },
+        { t: 'Top Pick', u: '/collections/top-pick', s: 1, l: [['Makeup', '/collections/make-up'], ['Haircare', '/collections/hair'], ['Fragrances', '/collections/fragrance'], ['Nail Treatment', '/collections/nail-treatment'], ['Lip Balms', '/collections/lip-balms'], ['Lip Scrubs', '/collections/lip-scrubs']] },
+        { t: 'Tools & Accessories', u: '/collections/tools-accessories', s: 1, l: [] }
+      ] },
+      { t: 'MADE IN AFRICA', u: '/collections/made-in-africa', img: 'f5638a1649271b1e3144cdcaa84f6e4f', bnT: 'Made in Africa — on sale', g: [
+        { t: '', u: '', s: 1, l: [['Made In Ethiopia', '/collections/made-in-ethiopia'], ['Made In Kenya', '/collections/made-in-kenya-festival-fits'], ['Made In Nigeria', '/collections/made-in-nigeria'], ['Made In South Africa', '/collections/julz']] }
+      ] },
+      { t: 'DISCOVER', u: '/pages/shops', img: '344eb2dfb8c56c3911e9be04aa250ba9', bnT: 'Discover Vivo, Lizola and more', g: [
+        { t: '', u: '', s: 1, l: [['Vivo', '/shop/vivo'], ['Lizola', '/shop/lizola'], ['African Yuva', '/shop/african-yuva'], ['Puma', '/shop/puma'], ['Safari by Vivo', '/shop/safari-by-vivo']] }
+      ] }
+    ];
+
+    const menu = MENU.map((x, i) => {
+      const isSale = x.t === 'SALE';
+      const isOpen = open === i;
+      const isActive = active === x.t;
+      let bg = '#FFFFFF';
+      let fg = '#0E0B0C';
+      let bd = '#FFFFFF';
+      if (isSale) {
+        bg = bn ? '#DDEA0D' : '#B91C1C';
+        fg = bn ? '#0E0B0C' : '#FFFFFF';
+        bd = (isOpen || isActive) ? '#0E0B0C' : bg;
+      } else if (isOpen || isActive) {
+        bg = '#0E0B0C';
+        fg = '#FFFFFF';
+        bd = '#0E0B0C';
+      }
+      const span = x.g.reduce((a, g) => a + g.s, 0);
+      return {
+        t: x.t,
+        u: x.u,
+        label: tc(x.t),
+        bg: bg,
+        fg: fg,
+        bd: bd,
+        hover: () => this.setState({ open: i }),
+        toggle: () => this.setState({ acc: acc === i ? -1 : i }),
+        isAcc: acc === i,
+        rot: acc === i ? '180deg' : '0deg',
+        mobFg: isSale ? '#5F6600' : '#0E0B0C',
+        groups: x.g.map((g) => ({ t: g.t, hasT: !!g.t, u: g.u || x.u, span: g.s, l: L(g.l) })),
+        cols: Math.max(span, 4),
+        img: x.img ? 'assets/' + x.img + '.jpg' : '',
+        hasImg: !!x.img,
+        promoT: bn ? x.bnT : 'Shop ' + tc(x.t),
+        promoU: isSale && bn ? '/collections/black-friday-flash-sale' : x.u
+      };
+    });
+    const panel = open >= 0 && open < menu.length ? menu[open] : menu[0];
+
+    return {
+      m: m,
+      desk: !m,
+      bn: bn,
+      everyday: !bn,
+      menu: menu,
+      panel: panel,
+      hasPanel: !m && open >= 0,
+      promoTag: bn ? 'BLACK NOVEMBER' : 'SHOP NOW',
+      promoTagBg: bn ? '#DDEA0D' : '#FFFFFF',
+      promoTagFg: '#0E0B0C',
+      closeMenu: () => this.setState({ open: -1 }),
+      count: this.props.cartCount ?? 2,
+      total: this.props.cartTotal ?? 'KES 2,949',
+      cartAria: 'Open cart, ' + (this.props.cartCount ?? 2) + ' items',
+      cartClick: () => { if (typeof this.props.onCart === 'function') this.props.onCart(); },
+      searchClick: () => { if (typeof this.props.onSearch === 'function') this.props.onSearch(); },
+      navOpen: m && navOpen,
+      openNav: () => this.setState({ nav: true }),
+      closeNav: () => this.setState({ nav: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

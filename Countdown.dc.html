@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Countdown</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div role="timer" aria-label="{{ aria }}" style="display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: {{ fg }}">
+<sc-if value="{{ hasLabel }}" hint-placeholder-val="{{ true }}">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 2px">{{ label }}</span>
+</sc-if>
+<div style="display: inline-flex; align-items: center; gap: 4px">
+<sc-for list="{{ parts }}" as="u" hint-placeholder-count="4">
+<div style="display: inline-flex; align-items: baseline; justify-content: center; gap: 2px; min-width: {{ boxW }}; padding: {{ boxPad }}; border-radius: 8px; background: {{ boxBg }}; color: {{ numFg }}; box-sizing: border-box">
+<span style="font-family: 'Archivo', 'Arial Black', sans-serif; font-weight: 800; font-size: {{ numSize }}; line-height: 1; font-variant-numeric: tabular-nums">{{ u.v }}</span>
+<span style="font-size: 10px; font-weight: 700; text-transform: uppercase">{{ u.k }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"target":{"editor":"enum","options":["campaign","flash"],"default":"campaign"},"tone":{"editor":"enum","options":["dark","light","orange","ink"],"default":"dark"},"label":{"editor":null},"$preview":{"width":440,"height":120}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const target = this.props.target ?? 'campaign';
+    const tone = this.props.tone ?? 'dark';
+    const label = this.props.label ?? 'Ends in';
+    const now = st.now || Date.now();
+    const EAT = 3 * 3600 * 1000;
+    const DAY = 24 * 3600 * 1000;
+    let end;
+    if (target === 'flash') {
+      end = Math.floor((now + EAT) / DAY) * DAY + DAY - EAT;
+    } else {
+      end = Date.parse('2026-11-30T23:59:59+03:00');
+    }
+    let s = Math.max(0, Math.floor((end - now) / 1000));
+    const d = Math.floor(s / 86400); s -= d * 86400;
+    const h = Math.floor(s / 3600); s -= h * 3600;
+    const mi = Math.floor(s / 60);
+    const se = s - mi * 60;
+    const p2 = (x) => String(x).padStart(2, '0');
+    const parts = (target === 'flash' ? [] : [{ v: String(d), k: 'd' }]).concat([
+      { v: p2(h), k: 'h' }, { v: p2(mi), k: 'm' }, { v: p2(se), k: 's' }
+    ]);
+    const tones = {
+      dark: { fg: '#FFFFFF', numFg: '#FFFFFF', boxBg: 'rgba(255,255,255,0.12)' },
+      light: { fg: '#0E0B0C', numFg: '#0E0B0C', boxBg: '#FFFFFF' },
+      orange: { fg: '#0E0B0C', numFg: '#0E0B0C', boxBg: 'rgba(14,11,12,0.12)' },
+      ink: { fg: '#0E0B0C', numFg: '#FFFFFF', boxBg: '#0E0B0C' }
+    };
+    const t = tones[tone] || tones.dark;
+    return {
+      parts: parts.map((p) => Object.assign({}, p)),
+      label: label,
+      hasLabel: !!label,
+      aria: (target === 'flash' ? 'Flash prices end in ' : 'Black November ends in ') + parts.map((p) => p.v + p.k).join(' '),
+      fg: t.fg,
+      numFg: t.numFg,
+      boxBg: t.boxBg,
+      numSize: '15px',
+      boxW: '40px',
+      boxPad: '7px 6px',
+      inkNums: tone === 'ink'
+    };
+  }
+}
+</script>
+</body>
+</html>

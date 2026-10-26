@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Search</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div style="position: relative; width: 100%; height: 100vh; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0E0B0C; overflow: hidden">
+<button aria-label="Close search" onClick="{{ close }}" style="position: absolute; inset: 0; border: 0; padding: 0; background: rgba(14,11,12,0.55); cursor: pointer"></button>
+<div role="dialog" aria-label="Search the store" style="position: relative; background: #FFFFFF; max-height: {{ panelMaxH }}; height: {{ panelH }}; overflow-y: auto; box-shadow: 0 24px 48px rgba(14,11,12,0.2); border-radius: {{ panelRadius }}">
+<div style="max-width: 1320px; margin: 0 auto; padding: {{ pad }}; box-sizing: border-box">
+
+<div style="display: flex; align-items: center; gap: 10px">
+<label for="sz-search" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Search products, brands and more</label>
+<div style="flex: 1 1 auto; display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 18px; border-radius: 999px; border: 2px solid #0E0B0C; background: #FFFFFF; box-sizing: border-box">
+<svg viewBox="0 0 24 24" aria-hidden="true" style="flex: none; width: 20px; height: 20px; fill: none; stroke: #0E0B0C; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<input id="sz-search" type="search" autoFocus="{{ true }}" placeholder="Search products, brands and more…" value="{{ q }}" onChange="{{ onQ }}" style="flex: 1 1 auto; min-width: 0; border: 0; outline: none; background: transparent; font-family: inherit; font-size: 16px; color: #0E0B0C; min-height: 44px">
+<sc-if value="{{ hasQ }}" hint-placeholder-val="{{ false }}">
+<button aria-label="Clear search" onClick="{{ clear }}" style="flex: none; width: 36px; height: 36px; border-radius: 999px; border: 0; background: #F1ECE7; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+</sc-if>
+</div>
+<button aria-label="Close search" onClick="{{ close }}" style="flex: none; width: 48px; height: 48px; border-radius: 999px; border: 1px solid #E7E2DC; background: #FFFFFF; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 28px; margin-top: 24px; align-items: flex-start">
+<div style="flex: 1 1 260px; max-width: {{ asideMax }}; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #6B625C">POPULAR SEARCHES</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ terms }}" as="t" hint-placeholder-count="8">
+<button onClick="{{ t.pick }}" style="min-height: 38px; padding: 0 14px; border-radius: 999px; border: 1px solid {{ t.bd }}; background: {{ t.bg }}; color: {{ t.fg }}; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{ t.label }}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #6B625C; margin-bottom: 6px">COLLECTIONS</span>
+<sc-for list="{{ cols }}" as="c" hint-placeholder-count="5">
+<a href="collection.html" title="{{ c.u }}" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 10px; background: {{ c.bg }}; color: #0E0B0C; text-decoration: none; font-size: 14px; font-weight: 600">{{ c.t }}<span style="font-size: 12px; color: #6B625C; font-weight: 500">{{ c.n }}</span></a>
+</sc-for>
+</div>
+</div>
+
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+<span style="font-size: 16px; font-weight: 800">{{ heading }}</span>
+<a href="collection.html" style="font-size: 13px; font-weight: 700; color: #5F6600; text-decoration: none; min-height: 40px; display: inline-flex; align-items: center">{{ viewAll }}</a>
+</div>
+<sc-if value="{{ none }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 28px; border-radius: 16px; background: #F7F5F2; font-size: 14px; color: #4A4245">No matches for “{{ q }}”. Try “dress”, “Vivo” or “sneakers”.</div>
+</sc-if>
+<div style="display: grid; grid-template-columns: repeat({{ gridCols }}, minmax(0, 1fr)); gap: 14px">
+<sc-for list="{{ results }}" as="p" hint-placeholder-count="8">
+<a href="product.html" title="{{ p.path }}" style="display: flex; flex-direction: column; gap: 8px; color: #0E0B0C; text-decoration: none">
+<div style="position: relative; border-radius: 12px; overflow: hidden; background: #EDEAE6; aspect-ratio: 2 / 3">
+<img src="{{ p.img }}" alt="{{ p.t }}" style="width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block">
+<sc-if value="{{ p.hasOff }}" hint-placeholder-val="{{ false }}">
+<span style="position: absolute; top: 8px; left: 8px; background: #DDEA0D; color: #0E0B0C; font-size: 11px; font-weight: 800; padding: 4px 8px; border-radius: 999px">{{ p.off }}</span>
+</sc-if>
+</div>
+<span style="font-size: 13px; font-weight: 600; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden">{{ p.t }}</span>
+<span style="display: flex; gap: 6px; align-items: baseline; flex-wrap: wrap"><strong style="font-size: 14px">{{ p.price }}</strong><sc-if value="{{ p.hasOff }}" hint-placeholder-val="{{ false }}"><span style="font-size: 12px; color: #6B625C; text-decoration: line-through">{{ p.was }}</span></sc-if></span>
+</a>
+</sc-for>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"m":{"editor":"boolean","default":false},"onClose":{"editor":null},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const m = !!this.props.m;
+    const q = st.q === undefined ? '' : st.q;
+    const fmt = (n) => 'KES ' + Math.round(n).toLocaleString('en-US');
+    const POOL = [
+      ['vivo-sierra-maxi-dress-in-chiffon-white-orange-essia-print', 'Vivo Sierra Maxi Dress in Chiffon - White / Orange Essia Print', 'Vivo', 'Maxi Dresses', 6900, 0, '4d10f9cafac86e6a292679aa216a7b46'],
+      ['vivo-alani-high-low-dress-black-stripes-print', 'Vivo Alani High Low Dress - Black Stripes Print', 'Vivo', 'Knee Length Dresses', 2250, 5500, '1eaea51d87ee0a52f043bf53271b1456'],
+      ['lamazi-collections-chiffon-top-black-brown-print', 'Lamazi Collections Chiffon Top - Black / Brown Print', 'Lamazi Collections', 'Loose Tops', 500, 2100, 'd6d77b4229d605bd46493fac779c8bba'],
+      ['vivo-zola-3-4-sleeve-maxi-dress-in-crepe-black', 'Vivo Zola 3/4 Sleeve Maxi Dress in Crepe - Black', 'Vivo', 'Maxi Dresses', 7200, 0, '52425fcb08d49d9df205bfef0f34b0a2'],
+      ['hessed-sleeveless-jumpsuits-navy-blue', 'Hessed Sleeveless Jumpsuits - Navy Blue', 'Hessed', 'Jumpsuits & Playsuits', 1500, 2800, '95003e2ce35f5db76b8aec0fd3884972'],
+      ['julz-racer-sneakers-brown', 'Julz Racer Sneakers - Brown', 'Julz', "Women's Sneakers", 7960, 9950, 'eba097a93e3042aec553b175879bca8b'],
+      ['inroses-3-in-1-flow-drape-kimono-brown', 'Inroses 3-in-1 Flow Drape Kimono - Brown', 'Inroses Glitz', 'Waterfalls & Kimonos', 4800, 0, '98390a6abfa9fa7b60a971258373f5b7'],
+      ['kakiba-collections-wanjiku-maxi-dress-orange', 'Kakiba Collections Wanjiku Maxi Dress - Orange', 'Kakiba Collections', 'Maxi Dresses', 8500, 0, 'bf39f2e16785bf59efcab5a622082918'],
+      ['izulu-sarah-pant-rust-brown', 'Izulu Sarah Pant Set - Rust Brown', 'Izulu', 'Pant Sets', 10375, 0, '34ae9341ec47ca8e8c6dbd06dbbba071'],
+      ['reagan-bodycon-dress-navyblue-pink', 'Lizola Reagan Bodycon Dress - Navy Blue / Pink', 'Lizola', 'Bodycons', 5500, 0, '4daa4766c6b3959b35ce97b162bc68bd'],
+      ['julz-breeana-sneaker-silver', 'Julz Breeana Sneaker - Silver', 'Julz', "Women's Sneakers", 8240, 10300, '73384ad6a701b143a08ebf25c5ea5f28'],
+      ['hessed-long-buttonless-waterfall-pink', 'Hessed Long Buttonless Waterfall - Pink', 'Hessed', 'Waterfalls & Kimonos', 1500, 2500, '40fd33a1da982029b94e827220eb5b1e'],
+      ['hawi-sartorial-victoria-2-piece-rust-sunset', 'Hawi Sartorial Victoria 2 Piece - Rust Sunset', 'Hawi Sartorial', 'Pant Sets', 4250, 0, '61a1a45d7812c8c8324b5cc406f94f26'],
+      ['kijivu-creatives-glass-bangle-green', 'Kijivu Creatives Glass Bangle - Green', 'Kijivu Creatives', 'Bangles', 699, 1899, '2daf3cbf884054585228035457b0a8db'],
+      ['afrodame-chunky-bangle-gold-1', 'Afrodame Chunky Bangle - Gold', 'AfroDame', 'Bangles', 800, 1200, '7d61a44b6c6f1911e53e7d0fb82a6129'],
+      ['puma-rebound-retro-sneakers-in-white-and-black', 'Rebound Retro Puma White-Puma Black', 'Puma', "Men's Footwear", 17990, 0, 'e44d81f189653b0d0a6fb985b1a55031'],
+      ['vivo-zuri-cap-sleeve-maxi-dress-in-crepe-dark-green-green-siolo-print', 'Vivo Zuri Cap Sleeve Maxi Dress in Crepe - Dark Green / Green Siolo Print', 'Vivo', 'Maxi Dresses', 6900, 0, 'cb422df1e6d0aae09513916311dbc4ed'],
+      ['shona-elegant-two-piece-multicolored-mali-set', 'Shona Elegant Two Piece Multicolored Mali Set', 'Hats And More', 'Pant Sets', 7500, 0, '457bf520f5bb357e7b7b03b3c8a7e404'],
+      ['liliadly-pipy-dress-black', 'Liliadly Pipy Dress - Black', 'Liliadly', 'Maxi Dresses', 2765, 3950, '82d158e873429a72eaecb2b124b948f6'],
+      ['julz-rainhaven-coral-boot-red', 'Julz Rainhaven Coral Boot - Coral', 'Julz', 'Boots', 8320, 0, 'b64786da521e9f4f95c034534b3c9d03'],
+      ['safari-by-vivo-tafari-high-low-top-in-kitenge-tunda-print', 'Safari by Vivo Tafari High Low Top in Kitenge - Tunda Print', 'Safari by Vivo', 'Loose & Oversized Tops', 4400, 0, '00805bf50916ead0958a4fb3c607df11'],
+      ['hessed-midi-buttoned-waterfall-navy-blue', 'Hessed Midi Buttoned Waterfall - Navy blue', 'Hessed', 'Waterfalls & Kimonos', 1500, 2500, '537c5b14924a839567cb5e9acb787c33'],
+      ['kipusa-mahogany-keratin-cocunut-leave-in-conditioner', 'Kipusa Mahogany Keratin Cocunut Leave In Conditioner', 'Kipusa Beauty', 'Shampoo & Conditioner', 1600, 2000, '1117939f8166a01a09c2f030af4bc30b'],
+      ['julz-shiloh-sneakers-black-green', 'Julz Shiloh Sneakers - Black / Green', 'Julz', "Women's Sneakers", 7960, 9950, 'b2747f09ac892cc536a6e5ea9e911282']
+    ];
+    const mk = (r) => {
+      const pct = r[5] > r[4] ? Math.round((1 - r[4] / r[5]) * 100) : 0;
+      return { t: r[1], img: 'assets/' + r[6] + '.jpg', price: fmt(r[4]), was: pct ? fmt(r[5]) : '', hasOff: pct > 0, off: pct + '% OFF', path: '/products/' + r[0] };
+    };
+    const needle = q.trim().toLowerCase();
+    const hits = needle
+      ? POOL.filter((r) => (r[1] + ' ' + r[2] + ' ' + r[3]).toLowerCase().indexOf(needle) >= 0)
+      : POOL;
+    const limit = m ? 6 : 8;
+    const TERMS = ['Maxi', 'Kimono', 'Sneakers', 'Pant Set', 'Jumpsuit', 'Vivo', 'Bangle', 'Bodycon'];
+    const terms = TERMS.map((t) => {
+      const on = needle === t.toLowerCase();
+      return { label: t, pick: () => this.setState({ q: on ? '' : t }), bg: on ? '#0E0B0C' : '#FFFFFF', fg: on ? '#FFFFFF' : '#0E0B0C', bd: on ? '#0E0B0C' : '#E7E2DC' };
+    });
+    const COLS = [
+      ['Black November Sale', '/collections/black-november-sale', '6,904'],
+      ['Black November Flash Sale', '/collections/black-friday-flash-sale', '197'],
+      ['Vivo Black November', '/collections/vivo-black-november', ''],
+      ['Safari Black November', '/collections/safari-black-friday', '381'],
+      ['New In', '/collections/new-arrivals', '']
+    ];
+    return {
+      q: q,
+      hasQ: q.length > 0,
+      onQ: (e) => this.setState({ q: e && e.target ? e.target.value : '' }),
+      clear: () => this.setState({ q: '' }),
+      close: () => { if (typeof this.props.onClose === 'function') this.props.onClose(); },
+      terms: terms,
+      cols: COLS.map((c, i) => ({ t: c[0], u: c[1], n: c[2] ? c[2] + ' products' : '', bg: i === 0 ? '#F7FAD6' : '#FFFFFF' })),
+      results: hits.slice(0, limit).map(mk),
+      none: needle.length > 0 && hits.length === 0,
+      heading: needle ? hits.length + ' results for “' + q.trim() + '”' : 'Trending now',
+      viewAll: needle ? 'View all results' : 'Shop all deals',
+      gridCols: m ? 2 : 4,
+      pad: m ? '14px 14px 24px' : '24px 24px 32px',
+      panelMaxH: m ? '100vh' : '88vh',
+      panelH: m ? '100vh' : 'auto',
+      panelRadius: m ? '0' : '0 0 24px 24px',
+      asideMax: m ? '100%' : '300px'
+    };
+  }
+}
+</script>
+</body>
+</html>

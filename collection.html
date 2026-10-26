@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Design preview of the Shopzetu storefront redesign (Black November).">
+<link rel="icon" type="image/png" href="assets/9a57b6464821d21922160c7e6bd320d5.png">
+<title>Shopzetu — Black November Sale</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div style="font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0E0B0C; background: #F7F5F2; position: relative">
+
+<dc-import name="Header" m="{{ m }}" bn="{{ bn }}" cart-count="{{ cartCount }}" cart-total="{{ cartTotal }}" on-cart="{{ openCart }}" on-search="{{ openSearch }}" active="SALE" hint-size="100%,238px"></dc-import>
+
+<main style="max-width: 1320px; margin: 0 auto; padding: 0 {{ gut }} {{ secPad }}; box-sizing: border-box">
+
+<nav aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 16px 0; font-size: 13px; color: #6B625C">
+<a href="./" style="color: #6B625C; text-decoration: none">Home</a><span aria-hidden="true">/</span>
+<a href="collection.html" title="/collections/sale" style="color: #6B625C; text-decoration: none">Sale</a><span aria-hidden="true">/</span>
+<span style="color: #0E0B0C; font-weight: 600">Black November Sale</span>
+</nav>
+
+<section style="position: relative; overflow: hidden; border-radius: 24px; background: #0E0B0C; color: #FFFFFF; padding: {{ heroPad }}; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<div style="position: absolute; right: {{ discR }}; top: {{ discT }}; width: {{ discS }}; height: {{ discS }}; border-radius: 999px; background: #DDEA0D"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 12px; flex: 1 1 420px; min-width: 0">
+<span style="align-self: flex-start; border: 1px solid #DDEA0D; color: #DDEA0D; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; padding: 5px 10px; border-radius: 999px">BLACK NOVEMBER</span>
+<h1 style="margin: 0; font-family: 'Archivo', 'Arial Black', sans-serif; font-stretch: 112%; font-weight: 900; font-size: {{ h1 }}; line-height: 1; letter-spacing: -0.01em">Black November Sale</h1>
+<p style="margin: 0; font-size: 15px; color: #D9D1CC">6,904 products · Partner brands, marked down</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px">
+<a href="collection.html" title="/collections/black-november-sale" aria-current="page" style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; background: #FFFFFF; color: #0E0B0C; text-decoration: none; font-size: 13px; font-weight: 700">All deals</a>
+<a href="collection.html" title="/collections/black-friday-flash-sale" style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid #3A3033; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600">Flash Sale 40%+</a>
+<a href="collection.html" title="/collections/vivo-black-november" style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid #3A3033; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600">Vivo</a>
+<a href="collection.html" title="/collections/safari-black-friday" style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid #3A3033; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600">Safari</a>
+<a href="collection.html" title="/collections/zoya-black-friday" style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid #3A3033; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600">Zoya</a>
+</div>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #EDE6E2">SALE ENDS IN</span>
+<dc-import name="Countdown" target="campaign" tone="dark" label="" hint-size="210px,36px"></dc-import>
+</div>
+</section>
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 24px 0 14px">
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+<sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ openFilters }}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #0E0B0C; background: #FFFFFF; color: #0E0B0C; font-family: inherit; font-weight: 700; font-size: 14px; cursor: pointer"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round"><path d="M4 6h9"></path><path d="M17 6h3"></path><circle cx="15" cy="6" r="2"></circle><path d="M4 12h3"></path><path d="M11 12h9"></path><circle cx="9" cy="12" r="2"></circle><path d="M4 18h11"></path><path d="M19 18h1"></path><circle cx="17" cy="18" r="2"></circle></svg>Filters{{ activeCountLabel }}</button>
+</sc-if>
+<span style="font-size: 14px; color: #4A4245"><strong style="color: #0E0B0C">{{ shown }}</strong> {{ shownLabel }}</span>
+</div>
+<label style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #4A4245">Sort by
+<select value="{{ sort }}" onChange="{{ onSort }}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid #E2DCD5; background: #FFFFFF; color: #0E0B0C; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">
+<option value="featured">Featured</option>
+<option value="discount">Biggest discount</option>
+<option value="low">Price: low to high</option>
+<option value="high">Price: high to low</option>
+</select>
+</label>
+</div>
+
+<sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px">
+<sc-for list="{{ chips }}" as="c" hint-placeholder-count="2">
+<button onClick="{{ c.remove }}" aria-label="Remove filter {{ c.label }}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 10px 0 14px; border-radius: 999px; border: 0; background: #0E0B0C; color: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{ c.label }}<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+</sc-for>
+<button onClick="{{ clearAll }}" style="min-height: 36px; padding: 0 8px; border: 0; background: transparent; color: #0E0B0C; font-family: inherit; font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer">Clear all</button>
+</div>
+</sc-if>
+
+<div style="display: flex; gap: 32px; align-items: flex-start">
+
+<div style="position: {{ fpPos }}; inset: 0; z-index: 120; display: {{ fpDisplay }}; flex: 0 0 260px; min-width: 0; background: {{ fpBackdrop }}">
+<aside aria-label="Filters" style="width: {{ fpW }}; height: {{ fpH }}; overflow-y: auto; background: {{ fpBg }}; border-radius: {{ fpRadius }}; padding: {{ fpPad }}; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px">
+<sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 20px; font-weight: 800">Filters</span>
+<button aria-label="Close filters" onClick="{{ closeFilters }}" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; color: #0E0B0C"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+</div>
+</sc-if>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em">DISCOUNT</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ discOpts }}" as="d" hint-placeholder-count="3">
+<button onClick="{{ d.pick }}" aria-pressed="{{ d.on }}" style="min-height: 38px; padding: 0 14px; border-radius: 999px; border: 1px solid {{ d.bd }}; background: {{ d.bg }}; color: {{ d.fg }}; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer">{{ d.label }}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 6px">CATEGORY</span>
+<sc-for list="{{ typeOpts }}" as="t" hint-placeholder-count="6">
+<label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 14px; cursor: pointer">
+<input type="checkbox" checked="{{ t.on }}" onChange="{{ t.toggle }}" style="width: 18px; height: 18px; accent-color: #0E0B0C; margin: 0">{{ t.label }}
+</label>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 6px">BRAND</span>
+<sc-for list="{{ brandOpts }}" as="b" hint-placeholder-count="6">
+<label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 14px; cursor: pointer">
+<input type="checkbox" checked="{{ b.on }}" onChange="{{ b.toggle }}" style="width: 18px; height: 18px; accent-color: #0E0B0C; margin: 0">{{ b.label }}
+</label>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em">PRICE (KES)</span>
+<div style="display: flex; align-items: center; gap: 8px">
+<label style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #6B625C">Min<input type="text" value="0" readOnly="{{ true }}" style="width: 100%; box-sizing: border-box; min-height: 40px; padding: 0 10px; border-radius: 10px; border: 1px solid #E2DCD5; font-family: inherit; font-size: 14px; color: #0E0B0C; background: #FFFFFF; min-width: 0"></label>
+<span style="padding-top: 18px; color: #6B625C">–</span>
+<label style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #6B625C">Max<input type="text" value="12,000" readOnly="{{ true }}" style="width: 100%; box-sizing: border-box; min-height: 40px; padding: 0 10px; border-radius: 10px; border: 1px solid #E2DCD5; font-family: inherit; font-size: 14px; color: #0E0B0C; background: #FFFFFF; min-width: 0"></label>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em">SIZE</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ sizeOpts }}" as="s" hint-placeholder-count="6">
+<button onClick="{{ s.toggle }}" aria-pressed="{{ s.on }}" style="min-width: 48px; min-height: 40px; padding: 0 10px; border-radius: 10px; border: 1px solid {{ s.bd }}; background: {{ s.bg }}; color: {{ s.fg }}; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer">{{ s.label }}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em">COLOUR</span>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{ colorOpts }}" as="c" hint-placeholder-count="8">
+<button onClick="{{ c.toggle }}" aria-label="{{ c.label }}" aria-pressed="{{ c.on }}" style="width: 32px; height: 32px; border-radius: 999px; border: 2px solid {{ c.ring }}; background: {{ c.hex }}; box-shadow: inset 0 0 0 2px #FFFFFF; cursor: pointer; padding: 0"></button>
+</sc-for>
+</div>
+</div>
+
+<label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 14px; cursor: pointer">
+<input type="checkbox" checked="{{ inStock }}" onChange="{{ toggleStock }}" style="width: 18px; height: 18px; accent-color: #0E0B0C; margin: 0">In stock only
+</label>
+
+<sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ closeFilters }}" style="min-height: 52px; border-radius: 999px; border: 0; background: #0E0B0C; color: #FFFFFF; font-family: inherit; font-weight: 800; font-size: 15px; cursor: pointer">Show {{ shown }} results</button>
+</sc-if>
+</aside>
+</div>
+
+<div style="flex: 1 1 auto; min-width: 0">
+<sc-if value="{{ none }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 40px; border-radius: 18px; background: #FFFFFF; text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center">
+<span style="font-size: 18px; font-weight: 800">No products match these filters</span>
+<button onClick="{{ clearAll }}" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 0; background: #0E0B0C; color: #FFFFFF; font-family: inherit; font-weight: 700; cursor: pointer">Clear all filters</button>
+</div>
+</sc-if>
+<div style="display: grid; grid-template-columns: repeat({{ gridCols }}, minmax(0, 1fr)); gap: {{ gridGap }}">
+<sc-for list="{{ items }}" as="p" hint-placeholder-count="12">
+<dc-import name="ProductCard" item="{{ p }}" hint-size="100%,470px"></dc-import>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 32px">
+<span style="font-size: 13px; color: #6B625C">You’ve viewed {{ shown }} of 6,904 products</span>
+<div style="width: 220px; height: 4px; border-radius: 999px; background: #E7E2DC; overflow: hidden"><div style="width: 2%; height: 100%; background: #0E0B0C"></div></div>
+<button style="min-height: 48px; padding: 0 28px; border-radius: 999px; border: 1.5px solid #0E0B0C; background: #FFFFFF; color: #0E0B0C; font-family: inherit; font-weight: 700; font-size: 14px; cursor: pointer">Load more</button>
+</div>
+</div>
+
+</div>
+</main>
+
+<dc-import name="Footer" m="{{ m }}" bn="{{ bn }}" hint-size="100%,480px"></dc-import>
+
+<a href="#" title="WhatsApp chat (same link as today)" aria-label="Chat with us on WhatsApp" style="position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 56px; height: 56px; border-radius: 999px; background: #1FAF55; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(14,11,12,0.25)"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M20 11.5a8 8 0 0 1-11.8 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5z"></path><path d="M8.5 11.5h.01"></path><path d="M12 11.5h.01"></path><path d="M15.5 11.5h.01"></path></svg></a>
+
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100">
+<dc-import name="CartDrawer" items="{{ cart }}" m="{{ m }}" on-close="{{ closeCart }}" on-qty="{{ setQty }}" on-remove="{{ removeRow }}" on-add="{{ addRow }}" hint-size="100%,100vh"></dc-import>
+</div>
+</sc-if>
+<sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100">
+<dc-import name="SearchOverlay" m="{{ m }}" on-close="{{ closeSearch }}" hint-size="100%,100vh"></dc-import>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"blackNovember":{"editor":"boolean","default":true,"section":"Campaign"},"mobile":{"editor":null},"$preview":{"width":1440,"height":4300}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  baseCart() {
+    return [
+      { h: 'vivo-alani-high-low-dress-black-stripes-print', t: 'Vivo Alani High Low Dress - Black Stripes Print', v: 'Vivo', p: 2250, c: 5500, img: 'assets/1eaea51d87ee0a52f043bf53271b1456.jpg', qty: 1, size: 'L' },
+      { h: 'kijivu-creatives-glass-bangle-green', t: 'Kijivu Creatives Glass Bangle - Green', v: 'Kijivu Creatives', p: 699, c: 1899, img: 'assets/2daf3cbf884054585228035457b0a8db.jpg', qty: 1, size: '' }
+    ];
+  }
+
+  cartList() {
+    const s = this.state || {};
+    return s.cart || this.baseCart();
+  }
+
+  addRow(r) {
+    const cart = this.cartList().slice();
+    const i = cart.findIndex((x) => x.h === r[0]);
+    if (i >= 0) cart[i] = Object.assign({}, cart[i], { qty: cart[i].qty + 1 });
+    else cart.push({ h: r[0], t: r[1], v: r[2], p: r[4], c: r[5], img: 'assets/' + r[6] + '.jpg', qty: 1, size: '' });
+    this.setState({ cart: cart, cartOpen: true, searchOpen: false });
+  }
+
+  setQty(h, d) {
+    this.setState({ cart: this.cartList().map((x) => (x.h === h ? Object.assign({}, x, { qty: Math.max(1, x.qty + d) }) : x)) });
+  }
+
+  removeRow(h) {
+    this.setState({ cart: this.cartList().filter((x) => x.h !== h) });
+  }
+
+  toggleIn(key, val) {
+    const s = this.state || {};
+    const cur = Object.assign({}, s[key] || {});
+    if (cur[val]) delete cur[val]; else cur[val] = 1;
+    this.setState({ [key]: cur });
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const bn = (() => {
+      // Preview switch: add ?campaign=off (everyday look) or ?campaign=on to any link.
+      // The choice is kept while browsing in the same tab.
+      try {
+        const q = new URLSearchParams(window.location.search).get('campaign');
+        if (q === 'on' || q === 'off') window.sessionStorage.setItem('sz-campaign', q);
+        const v = q || window.sessionStorage.getItem('sz-campaign');
+        if (v === 'off') return false;
+        if (v === 'on') return true;
+      } catch (e) {}
+      return this.props.blackNovember ?? true;
+    })();
+    const m = this.props.mobile ?? ((st.w || 1440) < 768);
+    const fmt = (n) => 'KES ' + Math.round(n).toLocaleString('en-US');
+
+    const POOL = [
+      ["lamazi-collections-chiffon-top-black-brown-print", "Lamazi Collections Chiffon Top - Black / Brown Print", "Lamazi Collections", "Loose Tops", 500, 2100, "d6d77b4229d605bd46493fac779c8bba"],
+      ["kijivu-creatives-glass-bangle-green", "Kijivu Creatives Glass Bangle - Green", "Kijivu Creatives", "Bangles", 699, 1899, "2daf3cbf884054585228035457b0a8db"],
+      ["lamazi-collections-tshirt-white", "Lamazi Collections T-shirt - White", "Lamazi Collections", "T-shirts & Tank Tops", 700, 1900, "a8fece3215e265369d1da32d89777e01"],
+      ["lamazi-collections-long-sleeved-stripped-black", "Lamazi Collections Long Sleeved Stripped - Black & White", "Lamazi Collections", "Fitted Tops", 700, 1500, "968c6ee9ec60859d4ce1c3c150703a74"],
+      ["lamazi-collections-long-sleeved-yellow", "Lamazi Collections Long Sleeved - Yellow", "Lamazi Collections", "Fitted Tops", 700, 1500, "04eb5d804481145fcb8abf772b748498"],
+      ["nalani-zephie-long-sleeve-crop-top-white", "WSC Pambo Nalani Zephie Long Sleeve Crop Top - White", "WSC Pambo", "Midriff & Crop Tops", 1449, 2900, "ce05b08478f5d3554991489838a8ed66"],
+      ["pure-buxom-polka-two-toned-bubble-hem-skirt-black-white", "Pure Buxom Polka Two Toned Bubble Hem Skirt - Black /White", "Pure Buxom", "Mini Skirts", 1500, 3000, "bd8347ff76b0a4f73634aa46f498bbf6"],
+      ["hessed-sleeveless-jumpsuits-navy-blue", "Hessed Sleeveless Jumpsuits - Navy Blue", "Hessed", "Jumpsuits & Playsuits", 1500, 2800, "95003e2ce35f5db76b8aec0fd3884972"],
+      ["hessed-long-buttonless-waterfall-pink", "Hessed Long Buttonless Waterfall - Pink", "Hessed", "Waterfalls & Kimonos", 1500, 2500, "40fd33a1da982029b94e827220eb5b1e"],
+      ["hessed-midi-buttoned-waterfall-navy-blue", "Hessed Midi Buttoned Waterfall - Navy blue", "Hessed", "Waterfalls & Kimonos", 1500, 2500, "537c5b14924a839567cb5e9acb787c33"],
+      ["stylish-sisters-ladies-flannel-shirt-brown-white", "Stylish Sisters Ladies Flannel Shirt - Brown / White", "Stylish Sisters", "Shirt Tops", 1899, 3000, "8ed5329e5ab4552a6be321e6512ca6fb"],
+      ["merli-africa-lantern-sleeve-top-nude", "Merli Africa Lantern Sleeve Top - Nude", "Merli Africa", "Fitted Tops", 2899, 4500, "0f414af5fb642883a842a0a7d1981d96"],
+      ["merli-africa-lantern-top-orange", "Merli Africa Lantern Top - Orange", "Merli Africa", "Loose Tops", 2899, 4500, "ce8fcc8b8f48b9c4d4b86954e36baf18"],
+      ["hessed-mini-stripped-sleeveless-dress-navy-blue", "Hessed Mini Stripped Sleeveless Dress - Navy Blue", "Hessed", "Knee Length Dresses", 1300, 2000, "4c5d6c96a1d3219d70fa340fb0fe8ff1"],
+      ["afrodame-chunky-bangle-gold-1", "Afrodame Chunky Bangle - Gold", "AfroDame", "Bangles", 800, 1200, "7d61a44b6c6f1911e53e7d0fb82a6129"],
+      ["liliadly-pipy-dress-black", "Liliadly Pipy Dress - Black", "Liliadly", "Maxi Dresses", 2765, 3950, "82d158e873429a72eaecb2b124b948f6"],
+      ["phyls-collections-leo-off-shoulder-navy-blue-knee-length-dress-blue", "Phyls Collections Leo Off Shoulder Dress - Blue", "Phyls Collections", "Knee Length Dresses", 3185, 4550, "a1bc3b6f769a09697a51d409593d5e2c"],
+      ["kipusa-mahogany-keratin-cocunut-leave-in-conditioner", "Kipusa Mahogany Keratin Cocunut Leave In Conditioner", "Kipusa Beauty", "Shampoo & Conditioner", 1600, 2000, "1117939f8166a01a09c2f030af4bc30b"],
+      ["julz-racer-sneakers-brown", "Julz Racer Sneakers - Brown", "Julz", "Women's Sneakers", 7960, 9950, "eba097a93e3042aec553b175879bca8b"],
+      ["julz-duke-tan-wedges-sandal-tan", "Julz Duke Tan Wedges Sandal -Tan", "Julz", "Sandals & Slippers", 9088, 11360, "e722d9a3160b81e0ee3b31413213aadc"],
+      ["julz-breeana-sneaker-silver", "Julz Breeana Sneaker - Silver", "Julz", "Women's Sneakers", 8240, 10300, "73384ad6a701b143a08ebf25c5ea5f28"],
+      ["julz-shiloh-sneakers-black-green", "Julz Shiloh Sneakers - Black / Green", "Julz", "Women's Sneakers", 7960, 9950, "b2747f09ac892cc536a6e5ea9e911282"],
+      ["hessed-zip-up-unisex-hoodies-dark-grey", "Hessed Zip Up Unisex Hoodies - Dark Grey", "Hessed", "Unisex Outerwear", 1300, 1550, "c104abf8351b9e36ddb10ddb340da86a"],
+      ["jolly-fancy-wear-sofi-shift-dress-mustard", "Jolly Fancy Wear Sofi Shift Dress - Mustard", "Jolly Fancy Wears", "Knee Length Dresses", 3800, 4300, "2154faecbe3f27732e19f0995686208b"]
+    ];
+    const GROUP = {
+      'Loose Tops': 'Tops', 'Fitted Tops': 'Tops', 'T-shirts & Tank Tops': 'Tops', 'Shirt Tops': 'Tops', 'Midriff & Crop Tops': 'Tops',
+      'Knee Length Dresses': 'Dresses', 'Maxi Dresses': 'Dresses',
+      'Mini Skirts': 'Bottoms & jumpsuits', 'Jumpsuits & Playsuits': 'Bottoms & jumpsuits',
+      'Waterfalls & Kimonos': 'Outerwear', 'Unisex Outerwear': 'Outerwear',
+      "Women's Sneakers": 'Footwear', 'Sandals & Slippers': 'Footwear',
+      'Bangles': 'Accessories', 'Shampoo & Conditioner': 'Beauty'
+    };
+    const NON_RETURNABLE = { 'afrodame-chunky-bangle-gold-1': 1, 'kipusa-mahogany-keratin-cocunut-leave-in-conditioner': 1 };
+    const pctOf = (r) => (r[5] > r[4] ? Math.round((1 - r[4] / r[5]) * 100) : 0);
+    const dealLabel = (pct) => (pct >= 60 ? 'Mega deal' : pct >= 40 ? 'Flash deal' : 'Hot deal');
+
+    const disc = st.disc || 0;
+    const types = st.types || {};
+    const brands = st.brands || {};
+    const sizes = st.sizes || {};
+    const colors = st.colors || {};
+    const sort = st.sort || 'featured';
+    const nTypes = Object.keys(types).length;
+    const nBrands = Object.keys(brands).length;
+
+    let list = POOL.filter((r) => pctOf(r) >= disc)
+      .filter((r) => !nTypes || types[GROUP[r[3]]])
+      .filter((r) => !nBrands || brands[r[2]]);
+    if (sort === 'discount') list = list.slice().sort((a, b) => pctOf(b) - pctOf(a));
+    if (sort === 'low') list = list.slice().sort((a, b) => a[4] - b[4]);
+    if (sort === 'high') list = list.slice().sort((a, b) => b[4] - a[4]);
+
+    const items = list.map((r) => {
+      const pct = pctOf(r);
+      return {
+        h: r[0], t: r[1], v: r[2], ty: r[3], img: 'assets/' + r[6] + '.jpg',
+        price: fmt(r[4]), was: pct ? fmt(r[5]) : '', hasWas: pct > 0, off: pct + '% OFF', hasOff: pct > 0, pct: pct,
+        badge: NON_RETURNABLE[r[0]] ? 'Non-returnable' : '', hasBadge: !!NON_RETURNABLE[r[0]],
+        deal: dealLabel(pct), hasDeal: bn, rank: '', hasRank: false, m: m, bn: bn,
+        add: () => this.addRow(r)
+      };
+    });
+
+    const discOpts = [20, 40, 60].map((v) => {
+      const on = disc === v;
+      return { label: v + '% off & above', on: on, pick: () => this.setState({ disc: on ? 0 : v }), bg: on ? '#0E0B0C' : '#FFFFFF', fg: on ? '#FFFFFF' : '#0E0B0C', bd: on ? '#0E0B0C' : '#E2DCD5' };
+    });
+    const typeOpts = ['Dresses', 'Tops', 'Bottoms & jumpsuits', 'Outerwear', 'Footwear', 'Accessories', 'Beauty'].map((t) => ({ label: t, on: !!types[t], toggle: () => this.toggleIn('types', t) }));
+    const brandOpts = ['Hessed', 'Julz', 'Lamazi Collections', 'Merli Africa', 'Kijivu Creatives', 'Stylish Sisters', 'Liliadly', 'AfroDame'].map((b) => ({ label: b, on: !!brands[b], toggle: () => this.toggleIn('brands', b) }));
+    const sizeOpts = ['XS', 'S', 'M', 'L', 'XL', '1X', '2X'].map((s) => {
+      const on = !!sizes[s];
+      return { label: s, on: on, toggle: () => this.toggleIn('sizes', s), bg: on ? '#0E0B0C' : '#FFFFFF', fg: on ? '#FFFFFF' : '#0E0B0C', bd: on ? '#0E0B0C' : '#E2DCD5' };
+    });
+    const colorOpts = [['Black', '#111111'], ['White', '#FAFAF7'], ['Navy', '#1E2A4A'], ['Brown', '#7A4A2A'], ['Green', '#2F6B3A'], ['Orange', '#E8661C'], ['Pink', '#E7A1B5'], ['Yellow', '#E9C33B']].map((c) => {
+      const on = !!colors[c[0]];
+      return { label: c[0], hex: c[1], on: on, ring: on ? '#0E0B0C' : '#D9D2CB', toggle: () => this.toggleIn('colors', c[0]) };
+    });
+
+    const chips = [];
+    if (disc) chips.push({ label: disc + '% off & above', remove: () => this.setState({ disc: 0 }) });
+    Object.keys(types).forEach((t) => chips.push({ label: t, remove: () => this.toggleIn('types', t) }));
+    Object.keys(brands).forEach((b) => chips.push({ label: b, remove: () => this.toggleIn('brands', b) }));
+
+    const cart = this.cartList();
+    const count = cart.reduce((a, x) => a + x.qty, 0);
+    const sub = cart.reduce((a, x) => a + x.p * x.qty, 0);
+    const fOpen = !!st.filtersOpen;
+
+    return {
+      m: m,
+      bn: bn,
+      gut: m ? '16px' : '24px',
+      secPad: m ? '40px' : '64px',
+      heroPad: m ? '28px 20px' : '40px 44px',
+      discR: m ? '-70px' : '-80px',
+      // keep the lime circle above the countdown so the white 'Sale ends in' text never sits on lime
+      discT: m ? '-90px' : '-150px',
+      discS: m ? '150px' : '260px',
+      h1: m ? '34px' : '52px',
+      // Grid width = page width minus the 260px filter column and 32px gap; fewer columns on tablets.
+      gridCols: m ? 2 : ((Math.min(st.w || 1440, 1320) - 340) >= 860 ? 4 : (Math.min(st.w || 1440, 1320) - 340) >= 600 ? 3 : 2),
+      gridGap: m ? '10px' : '16px',
+      items: items,
+      none: items.length === 0,
+      shown: items.length,
+      shownLabel: items.length === 1 ? 'product shown' : 'products shown',
+      sort: sort,
+      onSort: (e) => this.setState({ sort: e && e.target ? e.target.value : 'featured' }),
+      discOpts: discOpts,
+      typeOpts: typeOpts,
+      brandOpts: brandOpts,
+      sizeOpts: sizeOpts,
+      colorOpts: colorOpts,
+      inStock: st.inStock === undefined ? true : !!st.inStock,
+      toggleStock: () => this.setState({ inStock: !(st.inStock === undefined ? true : st.inStock) }),
+      chips: chips,
+      hasActive: chips.length > 0,
+      activeCountLabel: chips.length ? ' (' + chips.length + ')' : '',
+      clearAll: () => this.setState({ disc: 0, types: {}, brands: {}, sizes: {}, colors: {} }),
+      openFilters: () => this.setState({ filtersOpen: true }),
+      closeFilters: () => this.setState({ filtersOpen: false }),
+      fpPos: m ? 'fixed' : 'static',
+      fpDisplay: m ? (fOpen ? 'flex' : 'none') : 'block',
+      fpBackdrop: m ? 'rgba(14,11,12,0.5)' : 'transparent',
+      fpW: m ? '88%' : '100%',
+      fpH: m ? '100%' : 'auto',
+      fpBg: '#FFFFFF',
+      fpRadius: m ? '0' : '18px',
+      fpPad: m ? '16px 18px 24px' : '22px 20px',
+      cart: cart,
+      cartCount: count,
+      cartTotal: fmt(sub),
+      cartOpen: !!st.cartOpen,
+      searchOpen: !!st.searchOpen,
+      openCart: () => this.setState({ cartOpen: true, searchOpen: false }),
+      closeCart: () => this.setState({ cartOpen: false }),
+      openSearch: () => this.setState({ searchOpen: true, cartOpen: false }),
+      closeSearch: () => this.setState({ searchOpen: false }),
+      setQty: (h, d) => this.setQty(h, d),
+      removeRow: (h) => this.removeRow(h),
+      addRow: (r) => this.addRow(r)
+    };
+  }
+}
+</script>
+</body>
+</html>

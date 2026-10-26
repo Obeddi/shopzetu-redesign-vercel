@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cart drawer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div style="position: relative; width: 100%; height: 100vh; display: flex; justify-content: flex-end; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0E0B0C; overflow: hidden">
+<button aria-label="Close cart" onClick="{{ close }}" style="position: absolute; inset: 0; border: 0; padding: 0; background: rgba(14,11,12,0.5); cursor: pointer"></button>
+<aside aria-label="Your cart" style="position: relative; width: {{ panelW }}; max-width: 100%; height: 100%; background: #FFFFFF; display: flex; flex-direction: column; box-shadow: -24px 0 48px rgba(14,11,12,0.18)">
+
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 10px 14px 20px; border-bottom: 1px solid #EFEAE4">
+<div style="display: flex; align-items: baseline; gap: 8px">
+<span style="font-size: 20px; font-weight: 800; letter-spacing: -0.01em">Your cart</span>
+<span style="font-size: 14px; color: #6B625C">{{ countLabel }}</span>
+</div>
+<button aria-label="Close cart" onClick="{{ close }}" style="width: 44px; height: 44px; border: 0; background: transparent; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+</div>
+
+<sc-if value="{{ hasSavings }}" hint-placeholder-val="{{ true }}">
+<div style="margin: 14px 20px 0; background: #DDEA0D; color: #0E0B0C; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700">
+<svg viewBox="0 0 24 24" aria-hidden="true" style="flex: none; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9-9-9z"></path><path d="M7.5 7.5h.01"></path></svg>
+<span>You’re saving {{ savings }} this Black November</span>
+</div>
+</sc-if>
+
+<div style="flex: 1 1 auto; overflow-y: auto; padding: 4px 20px 18px">
+<sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 48px 0">
+<span style="font-size: 18px; font-weight: 800">Your cart is empty</span>
+<span style="font-size: 14px; color: #6B625C">Black November deals are waiting.</span>
+<a href="collection.html" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; border-radius: 999px; background: #0E0B0C; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 14px">Shop the sale</a>
+</div>
+</sc-if>
+
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="2">
+<div style="display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid #F1ECE7">
+<a href="product.html" style="flex: none; display: block"><img src="{{ r.img }}" alt="{{ r.t }}" style="width: 84px; height: 120px; object-fit: cover; object-position: center 15%; border-radius: 10px; background: #EDEAE6; display: block"></a>
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; color: #6B625C">{{ r.v }}</span>
+<a href="product.html" style="color: #0E0B0C; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.35">{{ r.t }}</a>
+<sc-if value="{{ r.hasSize }}" hint-placeholder-val="{{ true }}">
+<span style="font-size: 12px; color: #6B625C">Size: {{ r.size }}</span>
+</sc-if>
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+<span style="font-weight: 800; font-size: 14px">{{ r.price }}</span>
+<sc-if value="{{ r.hasWas }}" hint-placeholder-val="{{ true }}">
+<span style="font-size: 12px; color: #6B625C; text-decoration: line-through">{{ r.was }}</span>
+<span style="background: #F7FAD6; color: #4D5300; font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 999px">{{ r.off }}</span>
+</sc-if>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 6px">
+<div style="display: inline-flex; align-items: center; border: 1px solid #E7E2DC; border-radius: 999px">
+<button aria-label="Decrease quantity" onClick="{{ r.dec }}" style="width: 40px; height: 40px; border: 0; background: transparent; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round"><path d="M5 12h14"></path></svg></button>
+<span style="min-width: 26px; text-align: center; font-weight: 700; font-size: 14px">{{ r.qty }}</span>
+<button aria-label="Increase quantity" onClick="{{ r.inc }}" style="width: 40px; height: 40px; border: 0; background: transparent; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></button>
+</div>
+<button onClick="{{ r.remove }}" style="min-height: 40px; padding: 0 4px; border: 0; background: transparent; color: #4A4245; font-family: inherit; font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; cursor: pointer">Remove</button>
+</div>
+</div>
+</div>
+</sc-for>
+
+<sc-if value="{{ hasUps }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 800">Add a little extra</span>
+<sc-for list="{{ ups }}" as="u" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 12px; padding: 8px; border: 1px solid #EFEAE4; border-radius: 12px">
+<img src="{{ u.img }}" alt="{{ u.t }}" style="flex: none; width: 48px; height: 64px; object-fit: cover; object-position: center 15%; border-radius: 8px; background: #EDEAE6">
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ u.t }}</span>
+<span style="font-size: 13px; display: flex; gap: 6px; align-items: baseline"><strong>{{ u.price }}</strong><span style="color: #6B625C; text-decoration: line-through; font-size: 12px">{{ u.was }}</span></span>
+</div>
+<button onClick="{{ u.add }}" aria-label="Add {{ u.t }} to cart" style="flex: none; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid #0E0B0C; background: #FFFFFF; color: #0E0B0C; font-family: inherit; font-weight: 700; font-size: 13px; cursor: pointer">Add</button>
+</div>
+</sc-for>
+</div>
+</sc-if>
+</div>
+
+<div style="border-top: 1px solid #EFEAE4; padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 15px"><span>Subtotal</span><strong style="font-size: 17px">{{ subtotal }}</strong></div>
+<span style="font-size: 12px; color: #6B625C">Taxes and delivery calculated at checkout.</span>
+<a href="#" title="pay.shopzetu.com — Shopify checkout" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; border-radius: 999px; background: #0E0B0C; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 15px">Checkout · {{ subtotal }}</a>
+<button onClick="{{ close }}" style="min-height: 44px; border: 0; background: transparent; color: #0E0B0C; font-family: inherit; font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; cursor: pointer">Continue shopping</button>
+</div>
+</aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"items":{"editor":null},"m":{"editor":null},"onClose":{"editor":null},"onQty":{"editor":null},"onRemove":{"editor":null},"onAdd":{"editor":null},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  base() {
+    return [
+      { h: 'vivo-alani-high-low-dress-black-stripes-print', t: 'Vivo Alani High Low Dress - Black Stripes Print', v: 'Vivo', p: 2250, c: 5500, img: 'assets/1eaea51d87ee0a52f043bf53271b1456.jpg', qty: 1, size: 'L' },
+      { h: 'kijivu-creatives-glass-bangle-green', t: 'Kijivu Creatives Glass Bangle - Green', v: 'Kijivu Creatives', p: 699, c: 1899, img: 'assets/2daf3cbf884054585228035457b0a8db.jpg', qty: 1, size: '' }
+    ];
+  }
+
+  list() {
+    if (Array.isArray(this.props.items)) return this.props.items;
+    const st = this.state || {};
+    return st.items || this.base();
+  }
+
+  renderVals() {
+    const m = !!this.props.m;
+    const items = this.list();
+    const fmt = (n) => 'KES ' + Math.round(n).toLocaleString('en-US');
+    const qty = (h, d) => {
+      if (typeof this.props.onQty === 'function') this.props.onQty(h, d);
+      else this.setState({ items: items.map((x) => (x.h === h ? Object.assign({}, x, { qty: Math.max(1, x.qty + d) }) : x)) });
+    };
+    const remove = (h) => {
+      if (typeof this.props.onRemove === 'function') this.props.onRemove(h);
+      else this.setState({ items: items.filter((x) => x.h !== h) });
+    };
+    const add = (r) => {
+      if (typeof this.props.onAdd === 'function') { this.props.onAdd(r); return; }
+      const ex = items.find((x) => x.h === r[0]);
+      this.setState({
+        items: ex
+          ? items.map((x) => (x.h === r[0] ? Object.assign({}, x, { qty: x.qty + 1 }) : x))
+          : items.concat([{ h: r[0], t: r[1], v: r[2], p: r[4], c: r[5], img: 'assets/' + r[6] + '.jpg', qty: 1, size: '' }])
+      });
+    };
+    const close = () => { if (typeof this.props.onClose === 'function') this.props.onClose(); };
+
+    const rows = items.map((x) => {
+      const pct = x.c > x.p ? Math.round((1 - x.p / x.c) * 100) : 0;
+      return {
+        h: x.h, t: x.t, v: x.v, img: x.img, qty: x.qty,
+        size: x.size, hasSize: !!x.size,
+        price: fmt(x.p * x.qty), was: pct ? fmt(x.c * x.qty) : '', hasWas: pct > 0, off: pct + '% OFF',
+        dec: () => qty(x.h, -1),
+        inc: () => qty(x.h, 1),
+        remove: () => remove(x.h)
+      };
+    });
+    const count = items.reduce((a, x) => a + x.qty, 0);
+    const sub = items.reduce((a, x) => a + x.p * x.qty, 0);
+    const save = items.reduce((a, x) => a + (x.c > x.p ? (x.c - x.p) * x.qty : 0), 0);
+
+    const UPS = [
+      ['lamazi-collections-chiffon-top-black-brown-print', 'Lamazi Collections Chiffon Top - Black / Brown Print', 'Lamazi Collections', 'Loose Tops', 500, 2100, 'd6d77b4229d605bd46493fac779c8bba'],
+      ['kijivu-creatives-glass-bangle-green', 'Kijivu Creatives Glass Bangle - Green', 'Kijivu Creatives', 'Bangles', 699, 1899, '2daf3cbf884054585228035457b0a8db'],
+      ['lamazi-collections-tshirt-white', 'Lamazi Collections T-shirt - White', 'Lamazi Collections', 'T-shirts & Tank Tops', 700, 1900, 'a8fece3215e265369d1da32d89777e01'],
+      ['afrodame-chunky-bangle-gold-1', 'Afrodame Chunky Bangle - Gold', 'AfroDame', 'Bangles', 800, 1200, '7d61a44b6c6f1911e53e7d0fb82a6129']
+    ];
+    const inCart = {};
+    items.forEach((x) => { inCart[x.h] = 1; });
+    const ups = UPS.filter((r) => !inCart[r[0]]).slice(0, 3).map((r) => ({
+      t: r[1], img: 'assets/' + r[6] + '.jpg', price: fmt(r[4]), was: fmt(r[5]), add: () => add(r)
+    }));
+
+    return {
+      panelW: m ? '100%' : '440px',
+      rows: rows,
+      empty: rows.length === 0,
+      countLabel: count + (count === 1 ? ' item' : ' items'),
+      subtotal: fmt(sub),
+      savings: fmt(save),
+      hasSavings: save > 0,
+      ups: ups,
+      hasUps: ups.length > 0,
+      close: close
+    };
+  }
+}
+</script>
+</body>
+</html>

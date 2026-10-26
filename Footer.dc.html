@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Footer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<footer style="background: #0E0B0C; color: #FFFFFF; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif">
+<div style="max-width: 1320px; margin: 0 auto; padding: {{ pad }}; box-sizing: border-box">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 32px; border-bottom: 1px solid #2E2629">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<sc-if value="{{ bn }}" hint-placeholder-val="{{ true }}">
+<span style="align-self: flex-start; background: #DDEA0D; color: #0E0B0C; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; padding: 5px 10px; border-radius: 999px; margin-bottom: 4px">BLACK NOVEMBER</span>
+</sc-if>
+<span style="font-size: {{ nlH }}; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15">{{ nlTitle }}</span>
+<span style="font-size: 14px; color: #B5ABA5; line-height: 1.5">Join our email list for new arrivals and offers.</span>
+</div>
+<sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{ submit }}" style="flex: 1 1 380px; min-width: 0; display: flex; gap: 8px; flex-wrap: wrap">
+<label for="footer-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Email address</label>
+<input id="footer-email" type="email" placeholder="Your email address" value="{{ email }}" onChange="{{ onEmail }}" style="flex: 1 1 220px; min-width: 0; min-height: 50px; padding: 0 18px; border-radius: 999px; border: 1px solid #3A3033; background: #1B1517; color: #FFFFFF; font-family: inherit; font-size: 14px; box-sizing: border-box">
+<button type="submit" style="flex: none; min-height: 50px; padding: 0 24px; border-radius: 999px; border: 0; background: #DDEA0D; color: #0E0B0C; font-family: inherit; font-weight: 800; font-size: 14px; cursor: pointer">Subscribe</button>
+</form>
+</sc-if>
+<sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="flex: 1 1 380px; min-height: 50px; display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: #DDEA0D; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>You’re on the list. Watch your inbox.</div>
+</sc-if>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat({{ cols }}, minmax(0, 1fr)); gap: 32px; padding: 36px 0 32px">
+<div style="display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<a href="./" aria-label="Shopzetu home" style="display: block; width: 64px; height: 64px; border-radius: 6px; overflow: hidden; border: 1px solid #3A3033"><img src="assets/9a57b6464821d21922160c7e6bd320d5.png" alt="Shopzetu" style="width: 100%; height: 100%; display: block"></a>
+<span style="font-size: 14px; color: #B5ABA5; line-height: 1.6; max-width: 260px">Shop the latest trendy fashion, beauty and accessories.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #DDEA0D; margin-bottom: 8px">ABOUT US</span>
+<a href="#" title="/pages/about-us" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 34px; display: flex; align-items: center">Get to know us</a>
+<a href="#" title="/pages/marketing-associate-2026" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 34px; display: flex; align-items: center">Careers</a>
+<a href="#" title="https://zetustudios.pixieset.com/booking/studio-sessions" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 34px; display: flex; align-items: center">Zetu Studios</a>
+<a href="blog.html" title="/blogs/news" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 34px; display: flex; align-items: center">Blogs</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #DDEA0D; margin-bottom: 8px">CONTACT US</span>
+<span style="font-size: 12px; color: #B5ABA5">Email</span>
+<a href="#" title="mailto:support@shopzetu.com" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 30px; display: flex; align-items: center">support@shopzetu.com</a>
+<span style="font-size: 12px; color: #B5ABA5; margin-top: 8px">Phone</span>
+<a href="#" title="tel:0703420780" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 30px; display: flex; align-items: center">0703 420 780</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #DDEA0D; margin-bottom: 8px">HELP &amp; INFORMATION</span>
+<a href="#" title="/pages/privacy-policy" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 34px; display: flex; align-items: center">Privacy Policy</a>
+<a href="#" title="/pages/terms-conditions" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 34px; display: flex; align-items: center">Terms &amp; Conditions</a>
+<a href="#" title="/pages/delivery-returns" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 34px; display: flex; align-items: center">Delivery &amp; Returns</a>
+<a href="#" title="/pages/return-policy" style="color: #FFFFFF; text-decoration: none; font-size: 14px; min-height: 34px; display: flex; align-items: center">Refund and Exchange Policy</a>
+</div>
+</div>
+
+<div style="border-top: 1px solid #2E2629; padding: 18px 0 26px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 12px; color: #B5ABA5">
+<span>© 2026 Shopzetu</span>
+<span>All prices in KES</span>
+</div>
+
+</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"m":{"editor":"boolean","default":false},"bn":{"editor":"boolean","default":true,"section":"Campaign"},"$preview":{"width":1440,"height":600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const m = !!this.props.m;
+    const bn = this.props.bn ?? true;
+    const done = !!st.done;
+    return {
+      bn: bn,
+      pad: m ? '36px 16px 0' : '56px 24px 0',
+      nlH: m ? '22px' : '28px',
+      nlTitle: bn ? 'Get Black November deals first' : 'Join the Zetu Fam',
+      cols: m ? 2 : 4,
+      email: st.email || '',
+      onEmail: (e) => this.setState({ email: e && e.target ? e.target.value : '' }),
+      submit: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ done: true }); },
+      done: done,
+      notDone: !done
+    };
+  }
+}
+</script>
+</body>
+</html>

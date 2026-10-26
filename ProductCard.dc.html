@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Product card</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div onMouseEnter="{{ enter }}" onMouseLeave="{{ leave }}" style="position: relative; display: flex; flex-direction: column; gap: 10px; height: 100%; box-sizing: border-box; background: #FFFFFF; border-radius: 16px; padding: {{ pad }}; box-shadow: {{ shadow }}; transform: {{ lift }}; transition: box-shadow 0.25s, transform 0.25s; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0E0B0C">
+<div style="position: relative; border-radius: 12px; overflow: hidden; background: #EDEAE6; aspect-ratio: 2 / 3">
+<a href="product.html" title="{{ path }}" style="display: block; width: 100%; height: 100%"><img src="{{ it.img }}" alt="{{ it.t }}" style="width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; transform: {{ zoom }}; transition: transform 0.5s"></a>
+<sc-if value="{{ it.hasOff }}" hint-placeholder-val="{{ true }}">
+<span style="position: absolute; top: 10px; left: 10px; background: {{ tagBg }}; color: {{ tagFg }}; font-weight: 800; font-size: 11px; letter-spacing: 0.03em; padding: 5px 9px; border-radius: 999px">{{ it.off }}</span>
+</sc-if>
+<sc-if value="{{ it.hasRank }}" hint-placeholder-val="{{ false }}">
+<span style="position: absolute; bottom: 10px; left: 10px; background: #0E0B0C; color: #FFFFFF; font-family: 'Archivo', 'Arial Black', sans-serif; font-stretch: 112%; font-weight: 900; font-size: 15px; padding: 5px 10px; border-radius: 999px">{{ it.rank }}</span>
+</sc-if>
+<sc-if value="{{ it.hasBadge }}" hint-placeholder-val="{{ false }}">
+<span style="position: absolute; bottom: 10px; left: 10px; background: rgba(255,255,255,0.94); color: #0E0B0C; font-weight: 700; font-size: 11px; padding: 5px 9px; border-radius: 999px">{{ it.badge }}</span>
+</sc-if>
+<button aria-label="{{ favLabel }}" onClick="{{ toggleFav }}" style="position: absolute; top: 6px; right: 6px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0">
+<span style="width: 34px; height: 34px; border-radius: 999px; background: rgba(255,255,255,0.94); display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 17px; height: 17px; fill: {{ favFill }}; stroke: {{ favStroke }}; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"></path></svg></span>
+</button>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 0 4px; flex: 1 1 auto">
+<sc-if value="{{ it.hasDeal }}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #5F6600">{{ it.deal }}</span>
+</sc-if>
+<a href="product.html" title="{{ path }}" style="color: #0E0B0C; text-decoration: none; font-weight: 600; font-size: {{ titleSize }}; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.7em">{{ it.t }}</a>
+<span style="font-size: 12px; color: #6B625C; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ it.v }}</span>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 4px">
+<div style="display: flex; flex-direction: column; gap: 1px; min-width: 0">
+<span style="font-weight: 800; font-size: {{ priceSize }}; white-space: nowrap">{{ it.price }}</span>
+<sc-if value="{{ it.hasWas }}" hint-placeholder-val="{{ true }}">
+<span style="font-size: 12px; color: #6B625C; text-decoration: line-through; white-space: nowrap">{{ it.was }}</span>
+</sc-if>
+</div>
+<button aria-label="{{ addLabel }}" onClick="{{ addIt }}" style="flex: none; width: 44px; height: 44px; border-radius: 999px; border: 0; background: {{ addBg }}; color: {{ addFg }}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s">
+<sc-if value="{{ notAdded }}" hint-placeholder-val="{{ true }}">
+<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+</sc-if>
+<sc-if value="{{ isAdded }}" hint-placeholder-val="{{ false }}">
+<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+</sc-if>
+</button>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"item":{"editor":null},"$preview":{"width":280,"height":520}}'>
+class Component extends DCLogic {
+  componentWillUnmount() {
+    clearTimeout(this.t);
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const it = this.props.item ?? {
+      h: 'vivo-alani-high-low-dress-black-stripes-print',
+      t: 'Vivo Alani High Low Dress - Black Stripes Print',
+      v: 'Vivo',
+      ty: 'Knee Length Dresses',
+      img: 'assets/1eaea51d87ee0a52f043bf53271b1456.jpg',
+      price: 'KES 2,250', was: 'KES 5,500', hasWas: true,
+      off: '59% OFF', hasOff: true, pct: 59,
+      badge: '', hasBadge: false,
+      deal: 'Flash deal', hasDeal: true,
+      rank: '', hasRank: false,
+      m: false, bn: true, add: null
+    };
+    const hover = !!st.hover;
+    const added = !!st.added;
+    const fav = !!st.fav;
+    const m = !!it.m;
+    const everyday = it.bn === false;
+    return {
+      it: it,
+      path: '/products/' + it.h,
+      enter: () => this.setState({ hover: true }),
+      leave: () => this.setState({ hover: false }),
+      toggleFav: () => this.setState({ fav: !fav }),
+      addIt: () => {
+        if (typeof it.add === 'function') it.add();
+        this.setState({ added: true });
+        clearTimeout(this.t);
+        this.t = setTimeout(() => this.setState({ added: false }), 1400);
+      },
+      shadow: hover ? '0 14px 34px rgba(14,11,12,0.12)' : '0 1px 2px rgba(14,11,12,0.06)',
+      lift: hover ? 'translateY(-3px)' : 'none',
+      zoom: hover ? 'scale(1.04)' : 'scale(1)',
+      favFill: fav ? '#DDEA0D' : 'none',
+      favStroke: '#0E0B0C',
+      favLabel: fav ? 'Remove from wishlist' : 'Add to wishlist',
+      addLabel: added ? 'Added to cart' : 'Add to cart',
+      isAdded: added,
+      notAdded: !added,
+      addBg: added ? '#15803D' : (everyday ? '#0E0B0C' : '#DDEA0D'),
+      addFg: added ? '#FFFFFF' : (everyday ? '#FFFFFF' : '#0E0B0C'),
+      tagBg: everyday ? '#0E0B0C' : '#DDEA0D',
+      tagFg: everyday ? '#FFFFFF' : '#0E0B0C',
+      titleSize: m ? '13px' : '14px',
+      priceSize: m ? '14px' : '15px',
+      pad: m ? '6px 6px 10px' : '8px 8px 12px'
+    };
+  }
+}
+</script>
+</body>
+</html>

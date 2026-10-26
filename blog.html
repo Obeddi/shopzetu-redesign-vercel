@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Design preview of the Shopzetu storefront redesign (Black November).">
+<link rel="icon" type="image/png" href="assets/9a57b6464821d21922160c7e6bd320d5.png">
+<title>Shopzetu — Blog</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div style="font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0E0B0C; background: #F7F5F2; position: relative">
+
+<dc-import name="Header" m="{{ m }}" bn="{{ bn }}" cart-count="{{ cartCount }}" cart-total="{{ cartTotal }}" on-cart="{{ openCart }}" on-search="{{ openSearch }}" active="" hint-size="100%,238px"></dc-import>
+
+<main style="max-width: 1320px; margin: 0 auto; padding: 0 {{ gut }} {{ secPad }}; box-sizing: border-box">
+<nav aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 8px; padding: 16px 0; font-size: 13px; color: #6B625C">
+<a href="./" style="color: #6B625C; text-decoration: none">Home</a><span aria-hidden="true">/</span>
+<span style="color: #0E0B0C; font-weight: 600">Blog</span>
+</nav>
+
+<h1 style="margin: 8px 0 24px; font-size: {{ h1 }}; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Blogs</h1>
+
+<a href="article.html" title="/blogs/news/september-style-forecast-the-layering-pieces-kimonos-and-jumpsuits-you-need-right-now" style="display: flex; flex-wrap: wrap; gap: 0; background: #FFFFFF; border-radius: 24px; overflow: hidden; text-decoration: none; color: #0E0B0C; box-shadow: 0 1px 2px rgba(14,11,12,0.05)">
+<div style="flex: 1 1 420px; min-width: 0; aspect-ratio: 1 / 1; max-height: 560px; background: #EDEAE6"><img src="assets/2b770c77f030fe05a5f6ded1f5aedaf0.jpg" alt="September Style Forecast cover" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="flex: 1 1 420px; min-width: 0; padding: {{ featPad }}; display: flex; flex-direction: column; justify-content: center; gap: 16px; box-sizing: border-box">
+<span style="align-self: flex-start; background: #0E0B0C; color: #FFFFFF; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; padding: 5px 10px; border-radius: 999px">LATEST</span>
+<span style="font-size: 13px; color: #6B625C">September 11, 2026 · marketing Shopzetu</span>
+<span style="font-size: {{ featH }}; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em">September Style Forecast: The Layering Pieces, Kimonos, and Jumpsuits You Need Right Now</span>
+<span style="font-size: 15px; line-height: 1.65; color: #4A4245">Dear Zetu Fam, September is here, and if the pattern holds, you already know what's coming: cool mornings that need a jacket, afternoons that don't, and zero patience for outfits that can't keep up.</span>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; background: #0E0B0C; color: #FFFFFF; font-weight: 700; font-size: 14px; padding: 6px 6px 6px 20px; border-radius: 999px; min-height: 46px; box-sizing: border-box">Read article <span style="width: 34px; height: 34px; border-radius: 999px; background: #DDEA0D; display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: none; stroke: #0E0B0C; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</div>
+</a>
+
+<sc-if value="{{ bn }}" hint-placeholder-val="{{ true }}">
+<a href="collection.html" title="/collections/black-november-sale" style="margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: #0E0B0C; color: #FFFFFF; border-radius: 20px; padding: 22px 28px; text-decoration: none">
+<div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap">
+<span style="font-family: 'Archivo', 'Arial Black', sans-serif; font-stretch: 125%; font-weight: 900; font-size: 20px; color: #DDEA0D">BLACK NOVEMBER</span>
+<span style="font-size: 15px; color: #EDE6E2">Deals across dresses, shoes, beauty and more.</span>
+</div>
+<span style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #DDEA0D; color: #0E0B0C; font-weight: 800; font-size: 14px">Shop the sale</span>
+</a>
+</sc-if>
+
+<h2 style="margin: {{ secGap }} 0 18px; font-size: {{ h2 }}; font-weight: 800; letter-spacing: -0.02em">More stories</h2>
+<div style="display: grid; grid-template-columns: repeat({{ cols }}, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{ posts }}" as="a" hint-placeholder-count="2">
+<a href="article.html" title="{{ a.u }}" style="display: flex; flex-direction: column; background: #FFFFFF; border-radius: 20px; overflow: hidden; text-decoration: none; color: #0E0B0C; box-shadow: 0 1px 2px rgba(14,11,12,0.05)">
+<div style="aspect-ratio: 16 / 10; background: #EDEAE6"><img src="{{ a.img }}" alt="{{ a.t }}" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block"></div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; color: #6B625C">{{ a.date }}</span>
+<span style="font-size: 20px; line-height: 1.25; font-weight: 800; letter-spacing: -0.01em">{{ a.t }}</span>
+<sc-if value="{{ a.hasEx }}" hint-placeholder-val="{{ true }}">
+<span style="font-size: 14px; line-height: 1.6; color: #4A4245">{{ a.ex }}</span>
+</sc-if>
+<span style="font-size: 14px; font-weight: 700; color: #5F6600">Read more</span>
+</div>
+</a>
+</sc-for>
+</div>
+</main>
+
+<dc-import name="Footer" m="{{ m }}" bn="{{ bn }}" hint-size="100%,480px"></dc-import>
+
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100">
+<dc-import name="CartDrawer" m="{{ m }}" on-close="{{ closeCart }}" hint-size="100%,100vh"></dc-import>
+</div>
+</sc-if>
+<sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100">
+<dc-import name="SearchOverlay" m="{{ m }}" on-close="{{ closeSearch }}" hint-size="100%,100vh"></dc-import>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"blackNovember":{"editor":"boolean","default":true,"section":"Campaign"},"mobile":{"editor":null},"$preview":{"width":1440,"height":2520}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const bn = (() => {
+      // Preview switch: add ?campaign=off (everyday look) or ?campaign=on to any link.
+      // The choice is kept while browsing in the same tab.
+      try {
+        const q = new URLSearchParams(window.location.search).get('campaign');
+        if (q === 'on' || q === 'off') window.sessionStorage.setItem('sz-campaign', q);
+        const v = q || window.sessionStorage.getItem('sz-campaign');
+        if (v === 'off') return false;
+        if (v === 'on') return true;
+      } catch (e) {}
+      return this.props.blackNovember ?? true;
+    })();
+    const m = this.props.mobile ?? ((st.w || 1440) < 768);
+    return {
+      m: m,
+      bn: bn,
+      gut: m ? '16px' : '24px',
+      secPad: m ? '40px' : '64px',
+      secGap: m ? '36px' : '56px',
+      h1: m ? '30px' : '44px',
+      h2: m ? '22px' : '28px',
+      featH: m ? '24px' : '34px',
+      featPad: m ? '22px' : '48px',
+      cols: m ? 1 : 2,
+      posts: [
+        { t: 'Little upgrades, outfits that look rich', date: 'March 31, 2026', img: 'assets/0987a707fe113790eaca56632887892d.jpg', u: '/blogs/news/little-upgrades-outfits-that-look-rich', ex: '', hasEx: false },
+        { t: 'Rainy season slays in 2-pieces', date: 'March 16, 2026', img: 'assets/803ab4e271e4fc5ec2b3251d9b4ad7ab.jpg', u: '/blogs/news/rainy-season-slays-in-2-pieces', ex: 'The long rains are here, and if you think that means hiding under an oversized hoodie until the sun comes back think again.', hasEx: true }
+      ],
+      cartCount: 2,
+      cartTotal: 'KES 2,949',
+      cartOpen: !!st.cartOpen,
+      searchOpen: !!st.searchOpen,
+      openCart: () => this.setState({ cartOpen: true, searchOpen: false }),
+      closeCart: () => this.setState({ cartOpen: false }),
+      openSearch: () => this.setState({ searchOpen: true, cartOpen: false }),
+      closeSearch: () => this.setState({ searchOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

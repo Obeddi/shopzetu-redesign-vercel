@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Design preview of the Shopzetu storefront redesign (Black November).">
+<link rel="icon" type="image/png" href="assets/9a57b6464821d21922160c7e6bd320d5.png">
+<title>Shopzetu — Account</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div style="font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0E0B0C; background: #F7F5F2; position: relative">
+
+<dc-import name="Header" m="{{ m }}" bn="{{ bn }}" cart-count="{{ cartCount }}" cart-total="{{ cartTotal }}" on-cart="{{ openCart }}" on-search="{{ openSearch }}" active="" hint-size="100%,238px"></dc-import>
+
+<main style="max-width: 1320px; margin: 0 auto; padding: 0 {{ gut }} {{ secPad }}; box-sizing: border-box">
+<nav aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 8px; padding: 16px 0; font-size: 13px; color: #6B625C">
+<a href="./" style="color: #6B625C; text-decoration: none">Home</a><span aria-hidden="true">/</span>
+<span style="color: #0E0B0C; font-weight: 600">Account</span>
+</nav>
+
+<sc-if value="{{ signedOut }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; justify-content: center; padding: 40px 0 24px">
+<div style="width: 100%; max-width: 440px; background: #FFFFFF; border-radius: 24px; padding: {{ cardPad }}; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 1px 2px rgba(14,11,12,0.05)">
+<img src="assets/9a57b6464821d21922160c7e6bd320d5.png" alt="Shopzetu" style="width: 56px; height: 56px; border-radius: 6px; display: block">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h1 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em">Sign in</h1>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #4A4245">Enter your email and we’ll send you a 6-digit code.</p>
+</div>
+<label for="acct-email" style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Email
+<input id="acct-email" type="email" placeholder="you@example.com" style="min-height: 52px; padding: 0 16px; border-radius: 14px; border: 1px solid #E2DCD5; font-family: inherit; font-size: 15px; font-weight: 500; color: #0E0B0C">
+</label>
+<button onClick="{{ signIn }}" style="min-height: 52px; border-radius: 999px; border: 0; background: #0E0B0C; color: #FFFFFF; font-family: inherit; font-weight: 800; font-size: 15px; cursor: pointer">Continue</button>
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6B625C">Sign-in uses Shopify customer accounts (account.shopzetu.com), as today.</p>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ signedIn }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; padding-top: 8px">
+
+<aside style="flex: 1 1 240px; max-width: {{ asideMax }}; background: #FFFFFF; border-radius: 20px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: center; gap: 12px; padding: 6px 6px 14px; border-bottom: 1px solid #EFEAE4; margin-bottom: 8px">
+<span style="width: 44px; height: 44px; border-radius: 999px; background: #0E0B0C; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800">ZF</span>
+<div style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 800">[Customer name]</span><span style="font-size: 12px; color: #6B625C">[customer email]</span></div>
+</div>
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+<button onClick="{{ t.pick }}" aria-current="{{ t.current }}" style="display: flex; align-items: center; justify-content: space-between; min-height: 46px; padding: 0 12px; border-radius: 12px; border: 0; background: {{ t.bg }}; color: {{ t.fg }}; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; text-align: left">{{ t.label }}<span style="font-size: 12px; font-weight: 600; opacity: 0.8">{{ t.meta }}</span></button>
+</sc-for>
+<button onClick="{{ signOut }}" style="margin-top: 8px; min-height: 44px; border-radius: 12px; border: 1px solid #E7E2DC; background: #FFFFFF; color: #0E0B0C; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Sign out</button>
+</aside>
+
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<sc-if value="{{ bn }}" hint-placeholder-val="{{ true }}">
+<a href="collection.html" title="/collections/black-november-sale" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; background: #0E0B0C; color: #FFFFFF; border-radius: 20px; padding: 20px 24px; text-decoration: none">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Archivo', 'Arial Black', sans-serif; font-stretch: 125%; font-weight: 900; font-size: 18px; color: #DDEA0D">BLACK NOVEMBER</span>
+<span style="font-size: 14px; color: #EDE6E2">Your wishlist items may be on sale — take a look.</span>
+</div>
+<span style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #DDEA0D; color: #0E0B0C; font-weight: 800; font-size: 14px">Shop the sale</span>
+</a>
+</sc-if>
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+<h1 style="margin: 0; font-size: {{ h1 }}; font-weight: 800; letter-spacing: -0.02em">Orders</h1>
+<span style="font-size: 12px; font-weight: 700; color: #6B625C; background: #FFFFFF; border: 1px dashed #D9D2CB; border-radius: 999px; padding: 6px 12px">Sample data</span>
+</div>
+
+<sc-for list="{{ orders }}" as="o" hint-placeholder-count="2">
+<div style="background: #FFFFFF; border-radius: 20px; padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 1px 2px rgba(14,11,12,0.05)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-weight: 800; font-size: 16px">{{ o.no }}</span>
+<span style="font-size: 13px; color: #6B625C">{{ o.date }} · {{ o.count }}</span>
+</div>
+<span style="font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 999px; background: {{ o.chipBg }}; color: {{ o.chipFg }}">{{ o.status }}</span>
+</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<sc-for list="{{ o.imgs }}" as="i" hint-placeholder-count="2">
+<img src="{{ i.src }}" alt="{{ i.alt }}" style="width: 72px; height: 100px; object-fit: cover; object-position: center 15%; border-radius: 10px; background: #EDEAE6">
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid #F1ECE7; padding-top: 14px">
+<span style="font-size: 14px">Total <strong>{{ o.total }}</strong></span>
+<div style="display: flex; gap: 8px">
+<a href="#" style="display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border-radius: 999px; border: 1.5px solid #0E0B0C; color: #0E0B0C; text-decoration: none; font-weight: 700; font-size: 13px">View order</a>
+<a href="product.html" style="display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border-radius: 999px; background: #0E0B0C; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 13px">Buy again</a>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+
+</div>
+</sc-if>
+</main>
+
+<dc-import name="Footer" m="{{ m }}" bn="{{ bn }}" hint-size="100%,480px"></dc-import>
+
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100">
+<dc-import name="CartDrawer" m="{{ m }}" on-close="{{ closeCart }}" hint-size="100%,100vh"></dc-import>
+</div>
+</sc-if>
+<sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100">
+<dc-import name="SearchOverlay" m="{{ m }}" on-close="{{ closeSearch }}" hint-size="100%,100vh"></dc-import>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"blackNovember":{"editor":"boolean","default":true,"section":"Campaign"},"mobile":{"editor":null},"$preview":{"width":1440,"height":1580}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const bn = (() => {
+      // Preview switch: add ?campaign=off (everyday look) or ?campaign=on to any link.
+      // The choice is kept while browsing in the same tab.
+      try {
+        const q = new URLSearchParams(window.location.search).get('campaign');
+        if (q === 'on' || q === 'off') window.sessionStorage.setItem('sz-campaign', q);
+        const v = q || window.sessionStorage.getItem('sz-campaign');
+        if (v === 'off') return false;
+        if (v === 'on') return true;
+      } catch (e) {}
+      return this.props.blackNovember ?? true;
+    })();
+    const m = this.props.mobile ?? ((st.w || 1440) < 768);
+    const signedIn = st.signedIn === undefined ? true : !!st.signedIn;
+    const tab = st.tab || 'Orders';
+    const tabs = [['Orders', '2'], ['Wishlist', ''], ['Addresses', ''], ['Profile', '']].map((t) => {
+      const on = tab === t[0];
+      return { label: t[0], meta: t[1], current: on ? 'page' : 'false', bg: on ? '#0E0B0C' : 'transparent', fg: on ? '#FFFFFF' : '#0E0B0C', pick: () => this.setState({ tab: t[0] }) };
+    });
+    const orders = [
+      {
+        no: 'Order #[1001]', date: '[Order date]', count: '2 items', status: 'On its way', chipBg: '#F7FAD6', chipFg: '#4D5300', total: 'KES 2,949',
+        imgs: [{ src: 'assets/1eaea51d87ee0a52f043bf53271b1456.jpg', alt: 'Vivo Alani High Low Dress' }, { src: 'assets/2daf3cbf884054585228035457b0a8db.jpg', alt: 'Kijivu Creatives Glass Bangle' }]
+      },
+      {
+        no: 'Order #[1000]', date: '[Order date]', count: '1 item', status: 'Delivered', chipBg: '#E7F5EC', chipFg: '#166534', total: 'KES 4,800',
+        imgs: [{ src: 'assets/98390a6abfa9fa7b60a971258373f5b7.jpg', alt: 'Inroses 3-in-1 Flow Drape Kimono' }]
+      }
+    ];
+    return {
+      m: m,
+      bn: bn,
+      gut: m ? '16px' : '24px',
+      secPad: m ? '40px' : '64px',
+      cardPad: m ? '24px 20px' : '32px',
+      h1: m ? '24px' : '30px',
+      asideMax: m ? '100%' : '300px',
+      signedIn: signedIn,
+      signedOut: !signedIn,
+      signIn: () => this.setState({ signedIn: true }),
+      signOut: () => this.setState({ signedIn: false }),
+      tabs: tabs,
+      orders: orders,
+      cartCount: 2,
+      cartTotal: 'KES 2,949',
+      cartOpen: !!st.cartOpen,
+      searchOpen: !!st.searchOpen,
+      openCart: () => this.setState({ cartOpen: true, searchOpen: false }),
+      closeCart: () => this.setState({ cartOpen: false }),
+      openSearch: () => this.setState({ searchOpen: true, cartOpen: false }),
+      closeSearch: () => this.setState({ searchOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

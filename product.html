@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Design preview of the Shopzetu storefront redesign (Black November).">
+<link rel="icon" type="image/png" href="assets/9a57b6464821d21922160c7e6bd320d5.png">
+<title>Shopzetu — Vivo Alani High Low Dress</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div style="font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0E0B0C; background: #F7F5F2; position: relative">
+
+<dc-import name="Header" m="{{ m }}" bn="{{ bn }}" cart-count="{{ cartCount }}" cart-total="{{ cartTotal }}" on-cart="{{ openCart }}" on-search="{{ openSearch }}" active="" hint-size="100%,238px"></dc-import>
+
+<main style="max-width: 1320px; margin: 0 auto; padding: 0 {{ gut }} {{ bottomPad }}; box-sizing: border-box">
+
+<nav aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 16px 0; font-size: 13px; color: #6B625C">
+<a href="./" style="color: #6B625C; text-decoration: none">Home</a><span aria-hidden="true">/</span>
+<a href="collection.html" title="/collections/women" style="color: #6B625C; text-decoration: none">Women</a><span aria-hidden="true">/</span>
+<a href="collection.html" title="/collections/knee-length-dress" style="color: #6B625C; text-decoration: none">Knee Length Dresses</a><span aria-hidden="true">/</span>
+<span style="color: #0E0B0C; font-weight: 600">Vivo Alani High Low Dress</span>
+</nav>
+
+<div style="display: flex; flex-wrap: wrap; gap: {{ colGap }}; align-items: flex-start">
+
+<div style="flex: 1 1 560px; min-width: 0; display: flex; gap: 12px; flex-direction: {{ galDir }}">
+<div style="display: flex; flex-direction: {{ thumbDir }}; gap: 10px; flex: none; overflow-x: auto; scrollbar-width: none">
+<sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="5">
+<button aria-label="{{ t.label }}" onClick="{{ t.pick }}" style="flex: none; width: {{ thumbW }}; height: {{ thumbH }}; padding: 0; border-radius: 12px; overflow: hidden; border: 2px solid {{ t.ring }}; background: #EDEAE6; cursor: pointer"><img src="{{ t.img }}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block"></button>
+</sc-for>
+</div>
+<div style="position: relative; flex: 1 1 auto; min-width: 0; border-radius: 20px; overflow: hidden; background: #EDEAE6; aspect-ratio: 2 / 3; order: {{ mainOrder }}">
+<img src="{{ mainImg }}" alt="Vivo Alani High Low Dress - Black Stripes Print, photo {{ imgNo }} of 5" style="width: 100%; height: 100%; object-fit: cover; object-position: center 12%; display: block">
+<span style="position: absolute; top: 16px; left: 16px; background: {{ tagBg }}; color: {{ tagFg }}; font-weight: 800; font-size: 13px; padding: 7px 12px; border-radius: 999px">59% OFF</span>
+<button aria-label="{{ favLabel }}" onClick="{{ toggleFav }}" style="position: absolute; top: 12px; right: 12px; width: 48px; height: 48px; border-radius: 999px; border: 0; background: rgba(255,255,255,0.94); display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 21px; height: 21px; fill: {{ favFill }}; stroke: {{ favStroke }}; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"></path></svg></button>
+<button aria-label="Previous photo" onClick="{{ prevImg }}" style="position: absolute; left: 12px; top: 50%; margin-top: -22px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: rgba(255,255,255,0.92); color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+<button aria-label="Next photo" onClick="{{ nextImg }}" style="position: absolute; right: 12px; top: 50%; margin-top: -22px; width: 44px; height: 44px; border-radius: 999px; border: 0; background: rgba(255,255,255,0.92); color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M9 18l6-6-6-6"></path></svg></button>
+<span style="position: absolute; bottom: 14px; right: 14px; background: rgba(14,11,12,0.78); color: #FFFFFF; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px">{{ imgNo }} / 5</span>
+</div>
+</div>
+
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px; position: {{ infoPos }}; top: 16px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<a href="collection.html" title="/shop/vivo" style="align-self: flex-start; color: #5F6600; text-decoration: none; font-size: 13px; font-weight: 800; letter-spacing: 0.08em">VIVO</a>
+<h1 style="margin: 0; font-size: {{ h1 }}; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em">Vivo Alani High Low Dress - Black Stripes Print</h1>
+<a href="#reviews" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; color: #4A4245; text-decoration: none; font-size: 13px"><span aria-hidden="true" style="display: inline-flex; gap: 2px"><svg viewBox="0 0 24 24" style="width: 15px; height: 15px; fill: none; stroke: #0E0B0C; stroke-width: 1.6; stroke-linejoin: round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg viewBox="0 0 24 24" style="width: 15px; height: 15px; fill: none; stroke: #0E0B0C; stroke-width: 1.6; stroke-linejoin: round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg viewBox="0 0 24 24" style="width: 15px; height: 15px; fill: none; stroke: #0E0B0C; stroke-width: 1.6; stroke-linejoin: round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg viewBox="0 0 24 24" style="width: 15px; height: 15px; fill: none; stroke: #0E0B0C; stroke-width: 1.6; stroke-linejoin: round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg viewBox="0 0 24 24" style="width: 15px; height: 15px; fill: none; stroke: #0E0B0C; stroke-width: 1.6; stroke-linejoin: round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg></span>Reviews (Judge.me)</a>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap">
+<span style="font-size: 32px; font-weight: 800; letter-spacing: -0.02em">KES 2,250</span>
+<span style="font-size: 17px; color: #6B625C; text-decoration: line-through">KES 5,500</span>
+<span style="background: {{ tagBg }}; color: {{ tagFg }}; font-size: 12px; font-weight: 800; padding: 5px 10px; border-radius: 999px">59% OFF</span>
+</div>
+<span style="font-size: 14px; color: #15803D; font-weight: 700">You save KES 3,250</span>
+</div>
+
+<sc-if value="{{ bn }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; background: #0E0B0C; color: #FFFFFF; border-radius: 16px; padding: 14px 16px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'Archivo', 'Arial Black', sans-serif; font-stretch: 125%; font-weight: 900; font-size: 14px; color: #DDEA0D">BLACK NOVEMBER PRICE</span>
+<span style="font-size: 13px; color: #EDE6E2">Ends with the sale</span>
+</div>
+<dc-import name="Countdown" target="campaign" tone="dark" label="" hint-size="200px,36px"></dc-import>
+</div>
+</sc-if>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700">Colour: <span style="font-weight: 500; color: #4A4245">Print</span></span>
+<div style="display: flex; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px 0 6px; border-radius: 999px; border: 2px solid #0E0B0C; background: #FFFFFF; font-size: 13px; font-weight: 700"><img src="assets/211c2c1db01bb4ac5d7e82ad54124662.jpg" alt="" style="width: 30px; height: 30px; border-radius: 999px; object-fit: cover; object-position: center 30%">Black Stripes Print</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 13px; font-weight: 700">Size: <span style="font-weight: 500; color: #4A4245">{{ size }}</span></span>
+<a href="#" style="font-size: 13px; font-weight: 600; color: #0E0B0C; text-underline-offset: 3px">Size guide</a>
+</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{ sizes }}" as="s" hint-placeholder-count="4">
+<button onClick="{{ s.pick }}" aria-pressed="{{ s.on }}" disabled="{{ s.out }}" aria-label="{{ s.aria }}" style="position: relative; min-width: 64px; min-height: 48px; padding: 0 14px; border-radius: 12px; border: 2px solid {{ s.bd }}; background: {{ s.bg }}; color: {{ s.fg }}; font-family: inherit; font-size: 14px; font-weight: 700; cursor: {{ s.cursor }}; text-decoration: {{ s.deco }}">{{ s.label }}</button>
+</sc-for>
+</div>
+<span style="font-size: 13px; color: #5F6600; font-weight: 700">{{ stockNote }}</span>
+</div>
+
+<div style="display: flex; gap: 10px; align-items: stretch; flex-wrap: wrap">
+<div style="display: inline-flex; align-items: center; border: 1px solid #E2DCD5; border-radius: 999px; background: #FFFFFF">
+<button aria-label="Decrease quantity" onClick="{{ dec }}" style="width: 48px; height: 52px; border: 0; background: transparent; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round"><path d="M5 12h14"></path></svg></button>
+<span style="min-width: 28px; text-align: center; font-weight: 800">{{ qty }}</span>
+<button aria-label="Increase quantity" onClick="{{ inc }}" style="width: 48px; height: 52px; border: 0; background: transparent; color: #0E0B0C; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></button>
+</div>
+<button onClick="{{ addToCart }}" style="flex: 1 1 200px; min-height: 54px; border-radius: 999px; border: 0; background: {{ ctaBg }}; color: {{ ctaFg }}; font-family: inherit; font-weight: 800; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px">{{ addLabel }}</button>
+</div>
+<a href="#" title="Shopify accelerated checkout (pay.shopzetu.com)" style="display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 999px; background: #0E0B0C; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 15px; margin-top: -8px">Buy it now</a>
+
+<div style="display: grid; grid-template-columns: repeat({{ trustCols }}, minmax(0, 1fr)); gap: 10px">
+<a href="#" title="/pages/delivery-returns" style="display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 14px; background: #FFFFFF; color: #0E0B0C; text-decoration: none; font-size: 13px; font-weight: 600"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M3 7h11v9H3z"></path><path d="M14 10h4l3 3v3h-7"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle></svg>Delivery &amp; Returns</a>
+<a href="#" title="/pages/return-policy" style="display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 14px; background: #FFFFFF; color: #0E0B0C; text-decoration: none; font-size: 13px; font-weight: 600"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M4 9a8 8 0 0 1 14-3l2 2"></path><path d="M20 4v4h-4"></path><path d="M20 15a8 8 0 0 1-14 3l-2-2"></path><path d="M4 20v-4h4"></path></svg>Refund &amp; exchange policy</a>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 14px; background: #FFFFFF; font-size: 13px; font-weight: 600"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Made and designed in Kenya</div>
+</div>
+
+<div style="display: flex; flex-direction: column; border-top: 1px solid #E7E2DC">
+<sc-for list="{{ panels }}" as="p" hint-placeholder-count="3">
+<div style="border-bottom: 1px solid #E7E2DC">
+<button onClick="{{ p.toggle }}" aria-expanded="{{ p.open }}" style="width: 100%; min-height: 56px; display: flex; align-items: center; justify-content: space-between; border: 0; background: transparent; color: #0E0B0C; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; padding: 0">{{ p.title }}<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transform: rotate({{ p.rot }}); transition: transform 0.2s"><path d="M6 9l6 6 6-6"></path></svg></button>
+<sc-if value="{{ p.isDesc }}" hint-placeholder-val="{{ true }}">
+<div style="padding: 0 0 18px; display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 1.6; color: #3D3538">
+<div><strong style="color: #0E0B0C">Fabric details</strong><br>Light Polyester Twill</div>
+<div><strong style="color: #0E0B0C">Care details</strong><br>Hand wash Cold Water, Mild Soap, Do Not Bleach, Do Not Tumble Dry</div>
+<div><strong style="color: #0E0B0C">Brand details</strong><br>Vivo Woman is all about making every woman look and feel good with versatile and inclusive styles and sizes. No matter your shape and size, these pieces are designed to inspire a great dose of confidence that allows you to thrive as you go about your day. All pieces are ready to wear, made and designed in Kenya.</div>
+<div style="font-size: 13px; color: #6B625C">We strive to ensure that our photos reflect the true colors of our products. However, due to variations in monitor settings, digital photography, and production processes, the colors you see on your screen may not exactly match the actual product.</div>
+</div>
+</sc-if>
+<sc-if value="{{ p.isShip }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 0 0 18px; font-size: 14px; line-height: 1.6; color: #3D3538">Delivery times, fees and how to return an item are on our <a href="#" title="/pages/delivery-returns" style="color: #0E0B0C; font-weight: 700">Delivery &amp; Returns</a> page. Read the <a href="#" title="/pages/return-policy" style="color: #0E0B0C; font-weight: 700">Refund and Exchange Policy</a> before you buy.</div>
+</sc-if>
+<sc-if value="{{ p.isRev }}" hint-placeholder-val="{{ false }}">
+<div id="reviews" style="padding: 0 0 18px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #3D3538">
+<span>Customer reviews load here from Judge.me, as they do today.</span>
+<a href="#" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #0E0B0C; color: #0E0B0C; text-decoration: none; font-weight: 700; font-size: 13px">Write a review</a>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+
+<section style="margin-top: {{ secPad }}">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-size: {{ h2 }}; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em">More from Vivo</h2>
+<p style="margin: 0; font-size: 14px; color: #6B625C">Pieces that go with the Alani.</p>
+</div>
+<a href="collection.html" title="/shop/vivo" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #0E0B0C; color: #0E0B0C; text-decoration: none; font-weight: 700; font-size: 14px">Shop Vivo</a>
+</div>
+<div style="display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 2px 10px">
+<sc-for list="{{ recs }}" as="p" hint-placeholder-count="6">
+<div style="flex: 0 0 {{ cardW }}; scroll-snap-align: start"><dc-import name="ProductCard" item="{{ p }}" hint-size="100%,470px"></dc-import></div>
+</sc-for>
+</div>
+</section>
+
+</main>
+
+<dc-import name="Footer" m="{{ m }}" bn="{{ bn }}" hint-size="100%,480px"></dc-import>
+
+<sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; background: #FFFFFF; border-top: 1px solid #E7E2DC; padding: 10px 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 -8px 24px rgba(14,11,12,0.08)">
+<div style="display: flex; flex-direction: column; min-width: 0">
+<span style="font-size: 16px; font-weight: 800">KES 2,250</span>
+<span style="font-size: 12px; color: #6B625C"><span style="text-decoration: line-through">KES 5,500</span> · Size {{ size }}</span>
+</div>
+<button onClick="{{ addToCart }}" style="flex: 1 1 auto; min-height: 50px; border-radius: 999px; border: 0; background: {{ ctaBg }}; color: {{ ctaFg }}; font-family: inherit; font-weight: 800; font-size: 15px; cursor: pointer">{{ addLabel }}</button>
+</div>
+</sc-if>
+
+<sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
+<a href="#" title="WhatsApp chat (same link as today)" aria-label="Chat with us on WhatsApp" style="position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 56px; height: 56px; border-radius: 999px; background: #1FAF55; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(14,11,12,0.25)"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M20 11.5a8 8 0 0 1-11.8 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5z"></path><path d="M8.5 11.5h.01"></path><path d="M12 11.5h.01"></path><path d="M15.5 11.5h.01"></path></svg></a>
+</sc-if>
+
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100">
+<dc-import name="CartDrawer" items="{{ cart }}" m="{{ m }}" on-close="{{ closeCart }}" on-qty="{{ setQty }}" on-remove="{{ removeRow }}" on-add="{{ addRow }}" hint-size="100%,100vh"></dc-import>
+</div>
+</sc-if>
+<sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 100">
+<dc-import name="SearchOverlay" m="{{ m }}" on-close="{{ closeSearch }}" hint-size="100%,100vh"></dc-import>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"blackNovember":{"editor":"boolean","default":true,"section":"Campaign"},"mobile":{"editor":null},"$preview":{"width":1440,"height":2720}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    clearTimeout(this.t);
+  }
+
+  baseCart() {
+    return [
+      { h: 'kijivu-creatives-glass-bangle-green', t: 'Kijivu Creatives Glass Bangle - Green', v: 'Kijivu Creatives', p: 699, c: 1899, img: 'assets/2daf3cbf884054585228035457b0a8db.jpg', qty: 1, size: '' }
+    ];
+  }
+
+  cartList() {
+    const s = this.state || {};
+    return s.cart || this.baseCart();
+  }
+
+  addRow(r, size, qty) {
+    const cart = this.cartList().slice();
+    const key = r[0] + (size ? '-' + size : '');
+    const i = cart.findIndex((x) => x.h === key);
+    if (i >= 0) cart[i] = Object.assign({}, cart[i], { qty: cart[i].qty + (qty || 1) });
+    else cart.push({ h: key, t: r[1], v: r[2], p: r[4], c: r[5], img: 'assets/' + r[6] + '.jpg', qty: qty || 1, size: size || '' });
+    this.setState({ cart: cart, cartOpen: true, searchOpen: false });
+  }
+
+  setQty(h, d) {
+    this.setState({ cart: this.cartList().map((x) => (x.h === h ? Object.assign({}, x, { qty: Math.max(1, x.qty + d) }) : x)) });
+  }
+
+  removeRow(h) {
+    this.setState({ cart: this.cartList().filter((x) => x.h !== h) });
+  }
+
+  renderVals() {
+    const st = this.state || {};
+    const bn = (() => {
+      // Preview switch: add ?campaign=off (everyday look) or ?campaign=on to any link.
+      // The choice is kept while browsing in the same tab.
+      try {
+        const q = new URLSearchParams(window.location.search).get('campaign');
+        if (q === 'on' || q === 'off') window.sessionStorage.setItem('sz-campaign', q);
+        const v = q || window.sessionStorage.getItem('sz-campaign');
+        if (v === 'off') return false;
+        if (v === 'on') return true;
+      } catch (e) {}
+      return this.props.blackNovember ?? true;
+    })();
+    const m = this.props.mobile ?? ((st.w || 1440) < 768);
+    const fmt = (n) => 'KES ' + Math.round(n).toLocaleString('en-US');
+    const IMGS = ['211c2c1db01bb4ac5d7e82ad54124662', 'd3c4c52214ef7c20f48103c82c11d3ae', 'cf35840a649d8ab1baefb21e3bbe1d50', '93ef65e50a1fd7076df5dbf9e8d49149', '95f1e9a4a3ab9a892649101b2212659a'];
+    const idx = st.img || 0;
+    const size = st.size || 'L';
+    const qty = st.qty || 1;
+    const fav = !!st.fav;
+    const added = !!st.added;
+    const open = st.open || { desc: true };
+    const SIZES = [['S', 0], ['M', 0], ['L', 2], ['1X', 0]];
+    const ALANI = ['vivo-alani-high-low-dress-black-stripes-print', 'Vivo Alani High Low Dress - Black Stripes Print', 'Vivo', 'Knee Length Dresses', 2250, 5500, '1eaea51d87ee0a52f043bf53271b1456'];
+    const RECS = [
+      ["vivo-zola-3-4-sleeve-maxi-dress-in-crepe-black", "Vivo Zola 3/4 Sleeve Maxi Dress in Crepe - Black", "Vivo", "Maxi Dresses", 7200, 0, "52425fcb08d49d9df205bfef0f34b0a2"],
+      ["vivo-godet-midi-dress-in-crepe-dark-purple", "Vivo Godet Midi Dress in Crepe - Dark Purple", "Vivo", "Midi & Capri Dresses", 6900, 0, "206ebf6ce569bad21eb6328e8e36b29c"],
+      ["vivo-tiered-knee-length-dress-in-chiffon-dark-olive-green", "Vivo Tiered Knee Length Dress in Chiffon - Dark Olive Green", "Vivo", "Knee Length Dresses", 6900, 0, "bd441e0b00fd651c7d56ab2dca5c2e15"],
+      ["vivo-side-pleat-top-in-jersey-orange", "Vivo Side Pleat Top in Jersey - Orange", "Vivo", "Fitted Tops", 2500, 0, "487cfae47820f923586dfefab394e9fc"],
+      ["vivo-sierra-maxi-dress-in-chiffon-white-orange-essia-print", "Vivo Sierra Maxi Dress in Chiffon - White / Orange Essia Print", "Vivo", "Maxi Dresses", 6900, 0, "4d10f9cafac86e6a292679aa216a7b46"],
+      ["vivo-everyday-cap-sleeve-top-in-jersey-dark-taupe", "Vivo Everyday Cap Sleeve Top in Jersey - Dark Taupe", "Vivo", "Fitted Tops", 2200, 0, "bec0717d77139b583ec0e8060b91d1aa"],
+      ["vivo-wide-leg-pants-in-textured-crepe-olive", "Vivo Wide Leg Pants in Textured Crepe - Olive", "Vivo", "Full Length Pants", 3900, 0, "a4604c85a4280a1fb7e6d6b261413df6"]
+    ];
+    const recs = RECS.map((r) => ({
+      h: r[0], t: r[1], v: r[2], ty: r[3], img: 'assets/' + r[6] + '.jpg', price: fmt(r[4]), was: '', hasWas: false, off: '', hasOff: false, pct: 0,
+      badge: '', hasBadge: false, deal: '', hasDeal: false, rank: '', hasRank: false, m: m, bn: bn, add: () => this.addRow(r, '', 1)
+    }));
+    const thumbs = IMGS.map((id, i) => ({
+      img: 'assets/' + id + '.jpg', label: 'Show photo ' + (i + 1), ring: i === idx ? '#0E0B0C' : 'transparent', pick: () => this.setState({ img: i })
+    }));
+    const sizes = SIZES.map((s) => {
+      const out = s[1] === 0;
+      const on = size === s[0];
+      return {
+        label: s[0], out: out, on: on,
+        aria: s[0] + (out ? ', sold out' : ', ' + s[1] + ' left'),
+        pick: () => { if (!out) this.setState({ size: s[0] }); },
+        bd: on ? '#0E0B0C' : '#E2DCD5', bg: on ? '#0E0B0C' : (out ? '#F1ECE7' : '#FFFFFF'), fg: on ? '#FFFFFF' : (out ? '#8C827C' : '#0E0B0C'),
+        cursor: out ? 'not-allowed' : 'pointer', deco: out ? 'line-through' : 'none'
+      };
+    });
+    const left = (SIZES.find((s) => s[0] === size) || [size, 0])[1];
+    const togglePanel = (k) => () => { const o = Object.assign({}, open); o[k] = !o[k]; this.setState({ open: o }); };
+    const panels = [
+      { title: 'Description', open: !!open.desc, rot: open.desc ? '180deg' : '0deg', isDesc: !!open.desc, isShip: false, isRev: false, toggle: togglePanel('desc') },
+      { title: 'Delivery & Returns', open: !!open.ship, rot: open.ship ? '180deg' : '0deg', isDesc: false, isShip: !!open.ship, isRev: false, toggle: togglePanel('ship') },
+      { title: 'Reviews', open: !!open.rev, rot: open.rev ? '180deg' : '0deg', isDesc: false, isShip: false, isRev: !!open.rev, toggle: togglePanel('rev') }
+    ];
+    const cart = this.cartList();
+    const count = cart.reduce((a, x) => a + x.qty, 0);
+    const sub = cart.reduce((a, x) => a + x.p * x.qty, 0);
+    return {
+      m: m,
+      desk: !m,
+      bn: bn,
+      gut: m ? '16px' : '24px',
+      bottomPad: m ? '96px' : '64px',
+      secPad: m ? '40px' : '64px',
+      colGap: m ? '20px' : '48px',
+      h1: m ? '22px' : '28px',
+      h2: m ? '22px' : '28px',
+      galDir: m ? 'column' : 'row',
+      thumbDir: m ? 'row' : 'column',
+      thumbW: m ? '60px' : '84px',
+      thumbH: m ? '84px' : '118px',
+      mainOrder: m ? '-1' : '0',
+      infoPos: m ? 'static' : 'sticky',
+      trustCols: 3,
+      cardW: m ? '168px' : '228px',
+      thumbs: thumbs,
+      mainImg: 'assets/' + IMGS[idx] + '.jpg',
+      imgNo: idx + 1,
+      prevImg: () => this.setState({ img: (idx + IMGS.length - 1) % IMGS.length }),
+      nextImg: () => this.setState({ img: (idx + 1) % IMGS.length }),
+      tagBg: bn ? '#DDEA0D' : '#0E0B0C',
+      tagFg: bn ? '#0E0B0C' : '#FFFFFF',
+      favFill: fav ? '#DDEA0D' : 'none',
+      favStroke: '#0E0B0C',
+      favLabel: fav ? 'Remove from wishlist' : 'Add to wishlist',
+      toggleFav: () => this.setState({ fav: !fav }),
+      size: size,
+      sizes: sizes,
+      stockNote: left > 0 ? 'Only ' + left + ' left in ' + size + ' — S, M and 1X are sold out' : '',
+      qty: qty,
+      dec: () => this.setState({ qty: Math.max(1, qty - 1) }),
+      inc: () => this.setState({ qty: Math.min(left || 1, qty + 1) }),
+      addLabel: added ? 'Added to cart' : 'Add to cart · ' + fmt(2250 * qty),
+      ctaBg: added ? '#15803D' : (bn ? '#DDEA0D' : '#0E0B0C'),
+      ctaFg: added ? '#FFFFFF' : (bn ? '#0E0B0C' : '#FFFFFF'),
+      addToCart: () => {
+        this.addRow(ALANI, size, qty);
+        this.setState({ added: true });
+        clearTimeout(this.t);
+        this.t = setTimeout(() => this.setState({ added: false }), 1600);
+      },
+      panels: panels,
+      recs: recs,
+      cart: cart,
+      cartCount: count,
+      cartTotal: fmt(sub),
+      cartOpen: !!st.cartOpen,
+      searchOpen: !!st.searchOpen,
+      openCart: () => this.setState({ cartOpen: true, searchOpen: false }),
+      closeCart: () => this.setState({ cartOpen: false }),
+      openSearch: () => this.setState({ searchOpen: true, cartOpen: false }),
+      closeSearch: () => this.setState({ searchOpen: false }),
+      setQty: (h, d) => this.setQty(h, d),
+      removeRow: (h) => this.removeRow(h),
+      addRow: (r) => this.addRow(r, '', 1)
+    };
+  }
+}
+</script>
+</body>
+</html>
